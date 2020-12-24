@@ -4,7 +4,7 @@ output: html_notebook
 ---
 
 ```{r}
-df <- read.csv("../AoC Homemade/input.csv", colClasses = rep("character", 10), header = FALSE)
+df <- read.csv("../Quilting/input.csv", colClasses = rep("character", 10), header = FALSE)
 df
 ```
 

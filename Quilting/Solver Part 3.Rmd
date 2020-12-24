@@ -4,7 +4,7 @@ output: html_notebook
 ---
 
 ```{r}
-df <- read.csv("../AoC Homemade/input.csv", colClasses = rep("character", 10), header = FALSE)
+df <- read.csv("../Quilting/input.csv", colClasses = rep("character", 10), header = FALSE)
 df
 ```
 
@@ -66,44 +66,54 @@ for(r in 2:(nrow(df) - 1)) {
 colorList <- list(red, orange, yellow, green, blue, indigo, violet)
 ```
 
-```{r, warning=FALSE}
+
+```{r}
 newList <- list()
-for(i in 1:length(colorList))
+for (i in 1:length(colorList))
   newList <- append(newList, list(sort(as.vector(colorList[[i]][]), decreasing = TRUE)))
 colorList <- newList
 
-width <- 40
-redDF <- data.frame(matrix(NA, nrow=sum(red), ncol=width))
-orangeDF <- data.frame(matrix(NA, nrow=sum(orange), ncol=width))
-yellowDF <- data.frame(matrix(NA, nrow=sum(yellow), ncol=width))
-greenDF <- data.frame(matrix(NA, nrow=sum(green), ncol=width))
-blueDF <- data.frame(matrix(NA, nrow=sum(blue), ncol=width))
-indigoDF <- data.frame(matrix(NA, nrow=sum(indigo), ncol=width))
-violetDF <- data.frame(matrix(NA, nrow=sum(violet), ncol=width))
-```
+width <- 2 * 5
+redDF <- data.frame(matrix(NA, nrow = sum(red), ncol = width))
+orangeDF <- data.frame(matrix(NA, nrow = sum(orange), ncol = width))
+yellowDF <- data.frame(matrix(NA, nrow = sum(yellow), ncol = width))
+greenDF <- data.frame(matrix(NA, nrow = sum(green), ncol = width))
+blueDF <- data.frame(matrix(NA, nrow = sum(blue), ncol = width))
+indigoDF <- data.frame(matrix(NA, nrow = sum(indigo), ncol = width))
+violetDF <- data.frame(matrix(NA, nrow = sum(violet), ncol = width))
 
-```{r}
 part2 <- function(xdf, xcolorList) {
+  c <- 1
+  r <- 1
+  minBox <- max(unlist(xcolorList))
+  
   for (i in 1:length(xcolorList)) {
     breakFlag <- FALSE
     boxSize <- as.numeric(unlist(xcolorList)[i]) - 1
     
+    
     #iterate over cells one by one, fill block as they come, reverse of part 1, kinda
-    for (r in 1:nrow(xdf)) {
-      for (c in 1:ncol(xdf)) {
-        if (is.na(xdf[r, c]) & r + boxSize <= nrow(xdf) & c + boxSize <= ncol(xdf)) {
-          xdf[r:(r + boxSize), c:(c + boxSize)] <- TRUE
-          breakFlag <- TRUE
-          break
-        }
-        
-      }
-      if (breakFlag)
+    if (boxSize < minBox)
+      minBox <- boxSize
+    
+    while (c <= ncol(xdf)) {
+      if (is.na(xdf[r, c]) &
+          r + boxSize <= nrow(xdf) & c + boxSize <= ncol(xdf)) {
+        xdf[r:(r + boxSize), c:(c + boxSize)] <- TRUE
+        c <- c + boxSize + 2
+        breakFlag <- TRUE
         break
+      }
+      else
+        c <- c + 1
+    }
+    
+    if (c >= ncol(xdf)) {
+      r <- r + minBox + 2
+      c <- 1
     }
     
   }
-  
   return(xdf)
 }
 

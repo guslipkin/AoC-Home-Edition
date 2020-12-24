@@ -97,6 +97,6 @@ while(!fullFlag) {
 
 }
 
-write.table(df, "../AoC Homemade/input.csv", col.names = FALSE, row.names = FALSE, sep = ",")
+write.table(df, "../Quilting/input.csv", col.names = FALSE, row.names = FALSE, sep = ",")
 ```
 

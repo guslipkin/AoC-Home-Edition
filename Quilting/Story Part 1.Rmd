@@ -39,7 +39,7 @@ x	x	x	x	x	x	x	x	x	x
 ```
 
 and in color
-![](SampleInput.png){width=25%}
+![](Pictures/SampleInput.png){width=25%}
 
 You're trying to figure out if it is more economical to buy pre-cut patches of fabric or fabric by the yard. The base of the quilt will be white so you don't need to count those. You want to know ```r paste("how many patches you will need for the quilt")```.
 

@@ -1,0 +1,265 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(plyr)
+library(tidyverse)
+library(readxl)
+```
+
+
+# Part 1
+## Generator
+```{r, warning=FALSE}
+rowCount <- 125
+colCount <- 64
+
+df <- data.frame(matrix(NA, nrow=(rowCount + 2), ncol=(colCount + 2)))
+
+df[c(1,nrow(df)),] <- "x"
+df[,c(1,ncol(df))] <- "x"
+
+colors <- c("r", "o", "y", "g", "b", "i", "v")
+squaresRemaining <- rep(rowCount * colCount, 7)
+
+maxSize <- floor(sqrt(ncol(df)) - 1)
+fullFlag <- FALSE
+
+sameCounter <- 0
+sameCheck <- squaresRemaining
+
+rowFlip <- TRUE
+
+while(!fullFlag) {
+  if(rowFlip) {
+    rowSeq <- 2:(nrow(df)-1)
+    colSeq <- 2:(ncol(df)-1)
+    rowFlip <- FALSE
+  }
+  else {
+    rowSeq <- (nrow(df)-1):2
+    colSeq <- (ncol(df)-1):2
+    rowFlip <- TRUE
+  }
+  for(r in rowSeq) {
+    for(c in colSeq) {
+      
+      if(is.na(df[r,c])) {
+      validFlag <- FALSE
+      
+      boxSize <- floor(runif(1, min = 0, max = maxSize))
+      colorNum <- floor(runif(1, min = 1, max = length(colors) + 1))
+      color <- colors[colorNum]
+        
+      leftover <- squaresRemaining[colorNum] - ((boxSize + 1) * (boxSize + 1))
+      
+      if((r + boxSize) <= (nrow(df) - 1) & (c + boxSize) <= (ncol(df) - 1) & leftover >= 0) {
+        
+        temp <- as.data.frame(df[(r-1):(r+boxSize+1), (c-1):(c+boxSize+1)])
+        temp[2:(nrow(temp)-1),2:(ncol(temp)-1)] <- NA
+        temp[temp == "x"] <- NA
+        if(nrow(temp) == 1)
+          temp[1,1] <- NA
+        else
+          temp[c(1,nrow(temp)), c(1,ncol(temp))] <- NA
+        
+        if(!(FALSE %in% is.na(as.data.frame(df[r:(r+boxSize), c:(c+boxSize)]))) & !is.element(color, unlist(temp))) {
+            validFlag <- TRUE
+            squaresRemaining[colorNum] <- leftover
+            for(br in 0:boxSize)
+              for(bc in 0:boxSize)
+                df[r + br, c + bc] <- color
+        }
+      }
+        
+      if(!is.na(squaresRemaining[colorNum]) & squaresRemaining[colorNum] <= 6000) {
+        colors <- colors[-colorNum]
+        squaresRemaining <- squaresRemaining[-colorNum]
+      }
+      
+      }
+      
+    }
+  }
+  
+  if(length(colors) == 1 | sameCounter == 25)
+    df[is.na(df)] <- "w"
+  
+  if(!(TRUE %in% is.na(df)))
+    fullFlag <- TRUE
+  
+  if(sameCheck == squaresRemaining)
+    sameCounter <- sameCounter + 1
+  else {
+    sameCheck <- squaresRemaining
+    sameCounter <- 0
+  }
+
+}
+
+masterDF <- df
+
+write.table(df, "../AoC Homemade/input.csv", col.names = FALSE, row.names = FALSE, sep = ",")
+```
+
+## Solver
+```{r}
+df <- masterDF
+
+colors <- c("r", "o", "y", "g", "b", "i", "v")
+colorCount <- rep(0, 7)
+
+boxSize <- 0
+
+oldColor <- "z"
+
+for(r in 2:(nrow(df)-1)) {
+  for(c in 2:(ncol(df)-1)) {
+    
+    currentColor <- df[r,c]
+    if(!is.na(currentColor)) {
+      
+      for(place in c:(ncol(df)-1)) {
+        if(!is.na(df[r,place]) & currentColor == df[r,place])
+          boxSize <- boxSize + 1
+        else
+          break
+      }
+      
+      boxSize <- boxSize - 1
+      
+      colorCount[match(df[r,c], colors)] <- colorCount[match(df[r,c], colors)] + 1
+      df[(r):(r+boxSize),c:(c+boxSize)] <- NA
+      boxSize <- 0
+      oldColor <- currentColor
+    }
+    
+  }
+}
+
+password <- sum(colorCount)
+password
+```
+
+# Part 2
+
+# Solver
+```{r, warning=FALSE}
+df <- masterDF
+
+red <- c()
+orange <- c()
+yellow <- c()
+green <- c()
+blue <- c()
+indigo <- c()
+violet <- c()
+
+colors <- c("r", "o", "y", "g", "b", "i", "v")
+colorCount <- rep(0, 7)
+
+boxSize <- 0
+
+oldColor <- "z"
+
+for(r in 2:(nrow(df) - 1)) {
+  for(c in 2:(ncol(df) - 1)) {
+    currentColor <- df[r, c]
+    if(!is.na(currentColor)) {
+      for(place in c:(ncol(df) - 1)) {
+        if(!is.na(df[r, place]) & currentColor == df[r, place])
+          boxSize <- boxSize + 1
+        else
+          break
+      }
+      
+      testColor <- as.data.frame(df[(r):(r + boxSize), c:(c + boxSize)])[1, 1]
+      if (testColor == "r")
+        red <- append(red, boxSize)
+      if (testColor == "o")
+        orange <- append(orange, boxSize)
+      if (testColor == "y")
+        yellow <- append(yellow, boxSize)
+      if (testColor == "g")
+        green <- append(green, boxSize)
+      if (testColor == "b")
+        blue <- append(blue, boxSize)
+      if (testColor == "i")
+        indigo <- append(indigo, boxSize)
+      if (testColor == "v")
+        violet <- append(violet, boxSize)
+      
+      boxSize <- boxSize - 1
+      
+      
+      colorCount[match(df[r, c], colors)] <- colorCount[match(df[r, c], colors)] + 1
+      df[(r):(r + boxSize), c:(c + boxSize)] <- NA
+      boxSize <- 0
+      oldColor <- currentColor
+    }
+    
+  }
+}
+
+colorList <- list(red, orange, yellow, green, blue, indigo, violet)
+
+newList <- list()
+for(i in 1:length(colorList))
+  newList <- append(newList, list(sort(as.vector(colorList[[i]][]), decreasing = TRUE)))
+colorList <- newList
+
+width <- 40
+redDF <- data.frame(matrix(NA, nrow=sum(red), ncol=width))
+orangeDF <- data.frame(matrix(NA, nrow=sum(orange), ncol=width))
+yellowDF <- data.frame(matrix(NA, nrow=sum(yellow), ncol=width))
+greenDF <- data.frame(matrix(NA, nrow=sum(green), ncol=width))
+blueDF <- data.frame(matrix(NA, nrow=sum(blue), ncol=width))
+indigoDF <- data.frame(matrix(NA, nrow=sum(indigo), ncol=width))
+violetDF <- data.frame(matrix(NA, nrow=sum(violet), ncol=width))
+
+part2 <- function(xdf, xcolorList) {
+  for (i in 1:length(xcolorList)) {
+    breakFlag <- FALSE
+    boxSize <- as.numeric(unlist(xcolorList)[i]) - 1
+    
+    #iterate over cells one by one, fill block as they come, reverse of part 1, kinda
+    for (r in 1:nrow(xdf)) {
+      for (c in 1:ncol(xdf)) {
+        if (is.na(xdf[r, c]) & r + boxSize <= nrow(xdf) & c + boxSize <= ncol(xdf)) {
+          xdf[r:(r + boxSize), c:(c + boxSize)] <- TRUE
+          breakFlag <- TRUE
+          break
+        }
+        
+      }
+      if (breakFlag)
+        break
+    }
+    
+  }
+  
+  return(xdf)
+}
+
+redDF <- part2(redDF, colorList[[1]][])
+orangeDF <- part2(orangeDF, colorList[[2]][])
+yellowDF <- part2(yellowDF, colorList[[3]][])
+greenDF <- part2(greenDF, colorList[[4]][])
+blueDF <- part2(blueDF, colorList[[5]][])
+indigoDF <- part2(indigoDF, colorList[[6]][])
+violetDF <- part2(violetDF, colorList[[7]][])
+
+r <- nrow(redDF[rowSums(is.na(redDF)) != ncol(redDF),])
+o <- nrow(orangeDF[rowSums(is.na(orangeDF)) != ncol(orangeDF),])
+y <- nrow(yellowDF[rowSums(is.na(yellowDF)) != ncol(yellowDF),])
+g <- nrow(greenDF[rowSums(is.na(greenDF)) != ncol(greenDF),])
+b <- nrow(blueDF[rowSums(is.na(blueDF)) != ncol(blueDF),])
+i <- nrow(indigoDF[rowSums(is.na(indigoDF)) != ncol(indigoDF),])
+v <- nrow(violetDF[rowSums(is.na(violetDF)) != ncol(violetDF),])
+
+password <- paste(r, o, y, g, b, i, v, sep="")
+password
+```
+

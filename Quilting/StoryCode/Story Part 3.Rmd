@@ -1,0 +1,12 @@
+---
+title: "Story Part 3"
+output: html_notebook
+---
+
+While you're out at the fabric store, you decide to pick up some thread as you're not sure if you have enough for the quilt at home. You know that you'll need to **`sew all four edges`** of each patch to the base blanket (the white background) and that **`adjacent patches can share stitches`**. 
+
+For example, the input below would require a thread length of 16, but because there are 3 shared edges, you only need thread with a length of 13.
+
+![](Pictures/threadCount.png){width=25%}
+
+Each patch needs four lengths of thread and can share the thread with any shared borders. **`How much thread do you need to complete the quilt?`**

@@ -1,0 +1,60 @@
+---
+title: "Story Part 1"
+output: html_notebook
+---
+
+
+'Twas the day after Christmas, and all through the drifts. The people were playing, enjoying their gifts. Except for your Special Someone! 😟
+
+It's the day after Christmas and you realize you've forgotten to give your special someone that quilt you were planning on making them. In fact, you haven't even started. You find a quilt pattern online which thankfully comes pre-gridded in csv format (your puzzle input) and get to work. The pattern you found has eight colors 
+```
+red
+orange
+yellow
+green
+blue
+indigo
+violet
+white
+```
+
+which are condensed to individual letters: ```r paste("r o y g b i v w")```.
+
+The pattern also calls for a fringe around the border of the quilt. This is marked with an `x`.
+
+An example pattern may look like this
+```
+x	x	x	x	x	x	x	x	x	x
+x	b	v	o	o	r	r	b	b	x
+x	o	w	o	o	r	r	b	b	x
+x	v	v	g	y	y	b	y	y	x
+x	v	v	o	y	y	g	y	y	x
+x	o	o	w	g	i	y	r	w	x
+x	o	o	i	b	r	r	b	b	x
+x	g	w	g	i	r	r	b	b	x
+x	i	i	v	v	i	i	w	g	x
+x	i	i	v	v	i	i	r	v	x
+x	v	g	o	y	r	g	y	g	x
+x	x	x	x	x	x	x	x	x	x
+```
+
+and in color
+![](Pictures/SampleInput.png){width=25%}
+
+You're trying to figure out if it is more economical to buy pre-cut patches of fabric or fabric by the yard. The base of the quilt will be white so you don't need to count those. You want to know ```r paste("how many patches you will need for the quilt")```.
+
+Using the example input, the result would is as follows.
+
+Color | Number of Squares
+------- | -------------
+red | 5
+orange | 5
+yellow | 5
+green | 9
+blue | 5
+indigo | 5
+violet | 5
+
+To get the answer, you add all the square counts together (but not white) , which is ```r paste("5 + 5 + 5 + 9 + 5 + 5 + 5 = 39")```. Thus, the answer is `39`.
+
+Of course, your pattern is much larger. ```r paste("How many squares of fabric do you need to make the quilt?")```

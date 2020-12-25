@@ -1,0 +1,160 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+df <- read.csv("../Quilting/input.csv", colClasses = rep("character", 10), header = FALSE)
+masterDF <- df
+```
+
+
+```{r, warning=FALSE}
+red <- c()
+orange <- c()
+yellow <- c()
+green <- c()
+blue <- c()
+indigo <- c()
+violet <- c()
+
+colors <- c("r", "o", "y", "g", "b", "i", "v")
+colorCount <- rep(0, 7)
+
+boxSize <- 0
+
+oldColor <- "z"
+
+for(r in 2:(nrow(df) - 1)) {
+  for(c in 2:(ncol(df) - 1)) {
+    currentColor <- df[r, c]
+    if(!is.na(currentColor)) {
+      for(place in c:(ncol(df) - 1)) {
+        if(!is.na(df[r, place]) & currentColor == df[r, place])
+          boxSize <- boxSize + 1
+        else
+          break
+      }
+      
+      testColor <- as.data.frame(df[(r):(r + boxSize), c:(c + boxSize)])[1, 1]
+      if (testColor == "r")
+        red <- append(red, boxSize)
+      if (testColor == "o")
+        orange <- append(orange, boxSize)
+      if (testColor == "y")
+        yellow <- append(yellow, boxSize)
+      if (testColor == "g")
+        green <- append(green, boxSize)
+      if (testColor == "b")
+        blue <- append(blue, boxSize)
+      if (testColor == "i")
+        indigo <- append(indigo, boxSize)
+      if (testColor == "v")
+        violet <- append(violet, boxSize)
+      
+      boxSize <- boxSize - 1
+      
+      
+      colorCount[match(df[r, c], colors)] <- colorCount[match(df[r, c], colors)] + 1
+      df[(r):(r + boxSize), c:(c + boxSize)] <- NA
+      boxSize <- 0
+      oldColor <- currentColor
+    }
+    
+  }
+}
+
+colorList <- list(red, orange, yellow, green, blue, indigo, violet)
+```
+
+```{r, warning=FALSE}
+newList <- list()
+for(i in 1:length(colorList))
+  newList <- append(newList, list(sort(as.vector(colorList[[i]][]), decreasing = TRUE)))
+colorList <- newList
+
+width <- floor((ncol(df) - 2) * .625)
+redDF <- data.frame(matrix(NA, nrow=sum(red), ncol=width))
+orangeDF <- data.frame(matrix(NA, nrow=sum(orange), ncol=width))
+yellowDF <- data.frame(matrix(NA, nrow=sum(yellow), ncol=width))
+greenDF <- data.frame(matrix(NA, nrow=sum(green), ncol=width))
+blueDF <- data.frame(matrix(NA, nrow=sum(blue), ncol=width))
+indigoDF <- data.frame(matrix(NA, nrow=sum(indigo), ncol=width))
+violetDF <- data.frame(matrix(NA, nrow=sum(violet), ncol=width))
+```
+
+
+```{r, warning=FALSE}
+part2 <- function(xdf, xcolorList) {
+  for (i in 1:length(xcolorList)) {
+    breakFlag <- FALSE
+    boxSize <- as.numeric(unlist(xcolorList)[i]) - 1
+    
+    #iterate over cells one by one, fill block as they come, reverse of part 1, kinda
+    #for(r in 1:9) {
+    for (r in 1:nrow(xdf)) {
+      for (c in 1:ncol(xdf)) {
+        if (r + boxSize <= nrow(xdf) & c + boxSize <= ncol(xdf)) {
+          if (!(FALSE %in% is.na(xdf[r:(r + boxSize), c:(c + boxSize)]))) {
+            xdf[r:(r + boxSize), c:(c + boxSize)] <- (boxSize + 1)
+            breakFlag <- TRUE
+            break
+          }
+        }
+        
+      }
+      if (breakFlag)
+        break
+    }
+    
+  }
+  
+  return(xdf)
+}
+
+redDF <- part2(redDF, colorList[[1]][])
+orangeDF <- part2(orangeDF, colorList[[2]][])
+yellowDF <- part2(yellowDF, colorList[[3]][])
+greenDF <- part2(greenDF, colorList[[4]][])
+blueDF <- part2(blueDF, colorList[[5]][])
+indigoDF <- part2(indigoDF, colorList[[6]][])
+violetDF <- part2(violetDF, colorList[[7]][])
+
+redDF <- redDF[rowSums(is.na(redDF)) != ncol(redDF),]
+orangeDF <- orangeDF[rowSums(is.na(orangeDF)) != ncol(orangeDF),]
+yellowDF <- yellowDF[rowSums(is.na(yellowDF)) != ncol(yellowDF),]
+greenDF <- greenDF[rowSums(is.na(greenDF)) != ncol(greenDF),]
+blueDF <- blueDF[rowSums(is.na(blueDF)) != ncol(blueDF),]
+indigoDF <- indigoDF[rowSums(is.na(indigoDF)) != ncol(indigoDF),]
+violetDF <- violetDF[rowSums(is.na(violetDF)) != ncol(violetDF),]
+```
+
+```{r}
+write.table(redDF, "../Quilting/colors.csv", col.names = FALSE, row.names = FALSE, sep = ",")
+write.table(orangeDF, "../Quilting/colors.csv", col.names = FALSE, row.names = FALSE, sep = ",", append = TRUE)
+write.table(yellowDF, "../Quilting/colors.csv", col.names = FALSE, row.names = FALSE, sep = ",", append = TRUE)
+write.table(greenDF, "../Quilting/colors.csv", col.names = FALSE, row.names = FALSE, sep = ",", append = TRUE)
+write.table(blueDF, "../Quilting/colors.csv", col.names = FALSE, row.names = FALSE, sep = ",", append = TRUE)
+write.table(indigoDF, "../Quilting/colors.csv", col.names = FALSE, row.names = FALSE, sep = ",", append = TRUE)
+write.table(violetDF, "../Quilting/colors.csv", col.names = FALSE, row.names = FALSE, sep = ",", append = TRUE)
+```
+
+```{r, warning=FALSE}
+r <- as.numeric(as.vector(redDF[nrow(redDF),]))
+o <- as.numeric(as.vector(orangeDF[nrow(orangeDF),]))
+y <- as.numeric(as.vector(yellowDF[nrow(yellowDF),])) 
+g <- as.numeric(as.vector(greenDF[nrow(greenDF),]))
+b <- as.numeric(as.vector(blueDF[nrow(blueDF),]))
+i <- as.numeric(as.vector(indigoDF[nrow(indigoDF),])) 
+v <- as.numeric(as.vector(violetDF[nrow(violetDF),]))
+
+leftover <- data.frame(r, o, y, g, b, i, v)
+leftover
+
+spaces <- colSums(is.na(leftover))
+spaces
+
+min(spaces)
+```
+
+

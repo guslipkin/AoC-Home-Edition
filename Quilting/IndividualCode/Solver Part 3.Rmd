@@ -1,0 +1,46 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+df <- read.csv("../Quilting/input.csv", colClasses = rep("character", 1), header = FALSE)
+masterDF <- df
+df
+```
+
+
+```{r}
+boxSize <- 0
+oldColor <- "z"
+
+threadCount <- (nrow(df) - 2) + (ncol(df) - 2)
+
+for(r in 2:(nrow(df)-1)) {
+  for(c in 2:(ncol(df)-1)) {
+    
+    currentColor <- df[r,c]
+    if(!is.na(currentColor)) {
+      
+      for(place in c:(ncol(df)-1)) {
+        if(!is.na(df[r,place]) & currentColor == df[r,place])
+          boxSize <- boxSize + 1
+        else
+          break
+      }
+      
+      threadCount <- threadCount + (boxSize * 2)
+      
+      boxSize <- boxSize - 1
+      
+      df[(r):(r+boxSize),c:(c+boxSize)] <- NA
+      boxSize <- 0
+      oldColor <- currentColor
+    }
+    
+  }
+}
+
+threadCount
+```
+

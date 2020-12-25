@@ -1799,18 +1799,167 @@ summary {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGFzdGUoY2VpbGluZyhjb2xvckNvdW50IC8gd2lkdGgpLCBjb2xsYXBzZT1cIlwiKVxuXG5gYGAifQ== -->
-<pre class="r"><code>paste(ceiling(colorCount / width), collapse=&quot;&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGYgPC0gcmVhZC5jc3YoXCIuLi9RdWlsdGluZy9pbnB1dC5jc3ZcIiwgY29sQ2xhc3NlcyA9IHJlcChcImNoYXJhY3RlclwiLCAxMCksIGhlYWRlciA9IEZBTFNFKVxubWFzdGVyREYgPC0gZGZcbmBgYCJ9 -->
+<pre class="r"><code>df &lt;- read.csv(&quot;../Quilting/input.csv&quot;, colClasses = rep(&quot;character&quot;, 10), header = FALSE)
+masterDF &lt;- df</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVkIDwtIGMoKVxub3JhbmdlIDwtIGMoKVxueWVsbG93IDwtIGMoKVxuZ3JlZW4gPC0gYygpXG5ibHVlIDwtIGMoKVxuaW5kaWdvIDwtIGMoKVxudmlvbGV0IDwtIGMoKVxuXG5jb2xvcnMgPC0gYyhcInJcIiwgXCJvXCIsIFwieVwiLCBcImdcIiwgXCJiXCIsIFwiaVwiLCBcInZcIilcbmNvbG9yQ291bnQgPC0gcmVwKDAsIDcpXG5cbmJveFNpemUgPC0gMFxuXG5vbGRDb2xvciA8LSBcInpcIlxuXG5mb3IociBpbiAyOihucm93KGRmKSAtIDEpKSB7XG4gIGZvcihjIGluIDI6KG5jb2woZGYpIC0gMSkpIHtcbiAgICBjdXJyZW50Q29sb3IgPC0gZGZbciwgY11cbiAgICBpZighaXMubmEoY3VycmVudENvbG9yKSkge1xuICAgICAgZm9yKHBsYWNlIGluIGM6KG5jb2woZGYpIC0gMSkpIHtcbiAgICAgICAgaWYoIWlzLm5hKGRmW3IsIHBsYWNlXSkgJiBjdXJyZW50Q29sb3IgPT0gZGZbciwgcGxhY2VdKVxuICAgICAgICAgIGJveFNpemUgPC0gYm94U2l6ZSArIDFcbiAgICAgICAgZWxzZVxuICAgICAgICAgIGJyZWFrXG4gICAgICB9XG4gICAgICBcbiAgICAgIHRlc3RDb2xvciA8LSBhcy5kYXRhLmZyYW1lKGRmWyhyKToociArIGJveFNpemUpLCBjOihjICsgYm94U2l6ZSldKVsxLCAxXVxuICAgICAgaWYgKHRlc3RDb2xvciA9PSBcInJcIilcbiAgICAgICAgcmVkIDwtIGFwcGVuZChyZWQsIGJveFNpemUpXG4gICAgICBpZiAodGVzdENvbG9yID09IFwib1wiKVxuICAgICAgICBvcmFuZ2UgPC0gYXBwZW5kKG9yYW5nZSwgYm94U2l6ZSlcbiAgICAgIGlmICh0ZXN0Q29sb3IgPT0gXCJ5XCIpXG4gICAgICAgIHllbGxvdyA8LSBhcHBlbmQoeWVsbG93LCBib3hTaXplKVxuICAgICAgaWYgKHRlc3RDb2xvciA9PSBcImdcIilcbiAgICAgICAgZ3JlZW4gPC0gYXBwZW5kKGdyZWVuLCBib3hTaXplKVxuICAgICAgaWYgKHRlc3RDb2xvciA9PSBcImJcIilcbiAgICAgICAgYmx1ZSA8LSBhcHBlbmQoYmx1ZSwgYm94U2l6ZSlcbiAgICAgIGlmICh0ZXN0Q29sb3IgPT0gXCJpXCIpXG4gICAgICAgIGluZGlnbyA8LSBhcHBlbmQoaW5kaWdvLCBib3hTaXplKVxuICAgICAgaWYgKHRlc3RDb2xvciA9PSBcInZcIilcbiAgICAgICAgdmlvbGV0IDwtIGFwcGVuZCh2aW9sZXQsIGJveFNpemUpXG4gICAgICBcbiAgICAgIGJveFNpemUgPC0gYm94U2l6ZSAtIDFcbiAgICAgIFxuICAgICAgXG4gICAgICBjb2xvckNvdW50W21hdGNoKGRmW3IsIGNdLCBjb2xvcnMpXSA8LSBjb2xvckNvdW50W21hdGNoKGRmW3IsIGNdLCBjb2xvcnMpXSArIDFcbiAgICAgIGRmWyhyKToociArIGJveFNpemUpLCBjOihjICsgYm94U2l6ZSldIDwtIE5BXG4gICAgICBib3hTaXplIDwtIDBcbiAgICAgIG9sZENvbG9yIDwtIGN1cnJlbnRDb2xvclxuICAgIH1cbiAgICBcbiAgfVxufVxuXG5jb2xvckxpc3QgPC0gbGlzdChyZWQsIG9yYW5nZSwgeWVsbG93LCBncmVlbiwgYmx1ZSwgaW5kaWdvLCB2aW9sZXQpXG5gYGAifQ== -->
+<pre class="r"><code>red &lt;- c()
+orange &lt;- c()
+yellow &lt;- c()
+green &lt;- c()
+blue &lt;- c()
+indigo &lt;- c()
+violet &lt;- c()
+
+colors &lt;- c(&quot;r&quot;, &quot;o&quot;, &quot;y&quot;, &quot;g&quot;, &quot;b&quot;, &quot;i&quot;, &quot;v&quot;)
+colorCount &lt;- rep(0, 7)
+
+boxSize &lt;- 0
+
+oldColor &lt;- &quot;z&quot;
+
+for(r in 2:(nrow(df) - 1)) {
+  for(c in 2:(ncol(df) - 1)) {
+    currentColor &lt;- df[r, c]
+    if(!is.na(currentColor)) {
+      for(place in c:(ncol(df) - 1)) {
+        if(!is.na(df[r, place]) &amp; currentColor == df[r, place])
+          boxSize &lt;- boxSize + 1
+        else
+          break
+      }
+      
+      testColor &lt;- as.data.frame(df[(r):(r + boxSize), c:(c + boxSize)])[1, 1]
+      if (testColor == &quot;r&quot;)
+        red &lt;- append(red, boxSize)
+      if (testColor == &quot;o&quot;)
+        orange &lt;- append(orange, boxSize)
+      if (testColor == &quot;y&quot;)
+        yellow &lt;- append(yellow, boxSize)
+      if (testColor == &quot;g&quot;)
+        green &lt;- append(green, boxSize)
+      if (testColor == &quot;b&quot;)
+        blue &lt;- append(blue, boxSize)
+      if (testColor == &quot;i&quot;)
+        indigo &lt;- append(indigo, boxSize)
+      if (testColor == &quot;v&quot;)
+        violet &lt;- append(violet, boxSize)
+      
+      boxSize &lt;- boxSize - 1
+      
+      
+      colorCount[match(df[r, c], colors)] &lt;- colorCount[match(df[r, c], colors)] + 1
+      df[(r):(r + boxSize), c:(c + boxSize)] &lt;- NA
+      boxSize &lt;- 0
+      oldColor &lt;- currentColor
+    }
+    
+  }
+}
+
+colorList &lt;- list(red, orange, yellow, green, blue, indigo, violet)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmV3TGlzdCA8LSBsaXN0KClcbmZvcihpIGluIDE6bGVuZ3RoKGNvbG9yTGlzdCkpXG4gIG5ld0xpc3QgPC0gYXBwZW5kKG5ld0xpc3QsIGxpc3Qoc29ydChhcy52ZWN0b3IoY29sb3JMaXN0W1tpXV1bXSksIGRlY3JlYXNpbmcgPSBUUlVFKSkpXG5jb2xvckxpc3QgPC0gbmV3TGlzdFxuXG53aWR0aCA8LSBmbG9vcigobmNvbChkZikgLSAyKSAqIC42MjUpXG5yZWRERiA8LSBkYXRhLmZyYW1lKG1hdHJpeChOQSwgbnJvdz1zdW0ocmVkKSwgbmNvbD13aWR0aCkpXG5vcmFuZ2VERiA8LSBkYXRhLmZyYW1lKG1hdHJpeChOQSwgbnJvdz1zdW0ob3JhbmdlKSwgbmNvbD13aWR0aCkpXG55ZWxsb3dERiA8LSBkYXRhLmZyYW1lKG1hdHJpeChOQSwgbnJvdz1zdW0oeWVsbG93KSwgbmNvbD13aWR0aCkpXG5ncmVlbkRGIDwtIGRhdGEuZnJhbWUobWF0cml4KE5BLCBucm93PXN1bShncmVlbiksIG5jb2w9d2lkdGgpKVxuYmx1ZURGIDwtIGRhdGEuZnJhbWUobWF0cml4KE5BLCBucm93PXN1bShibHVlKSwgbmNvbD13aWR0aCkpXG5pbmRpZ29ERiA8LSBkYXRhLmZyYW1lKG1hdHJpeChOQSwgbnJvdz1zdW0oaW5kaWdvKSwgbmNvbD13aWR0aCkpXG52aW9sZXRERiA8LSBkYXRhLmZyYW1lKG1hdHJpeChOQSwgbnJvdz1zdW0odmlvbGV0KSwgbmNvbD13aWR0aCkpXG5gYGAifQ== -->
+<pre class="r"><code>newList &lt;- list()
+for(i in 1:length(colorList))
+  newList &lt;- append(newList, list(sort(as.vector(colorList[[i]][]), decreasing = TRUE)))
+colorList &lt;- newList
+
+width &lt;- floor((ncol(df) - 2) * .625)
+redDF &lt;- data.frame(matrix(NA, nrow=sum(red), ncol=width))
+orangeDF &lt;- data.frame(matrix(NA, nrow=sum(orange), ncol=width))
+yellowDF &lt;- data.frame(matrix(NA, nrow=sum(yellow), ncol=width))
+greenDF &lt;- data.frame(matrix(NA, nrow=sum(green), ncol=width))
+blueDF &lt;- data.frame(matrix(NA, nrow=sum(blue), ncol=width))
+indigoDF &lt;- data.frame(matrix(NA, nrow=sum(indigo), ncol=width))
+violetDF &lt;- data.frame(matrix(NA, nrow=sum(violet), ncol=width))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGFydDIgPC0gZnVuY3Rpb24oeGRmLCB4Y29sb3JMaXN0KSB7XG4gIGZvciAoaSBpbiAxOmxlbmd0aCh4Y29sb3JMaXN0KSkge1xuICAgIGJyZWFrRmxhZyA8LSBGQUxTRVxuICAgIGJveFNpemUgPC0gYXMubnVtZXJpYyh1bmxpc3QoeGNvbG9yTGlzdClbaV0pIC0gMVxuICAgIFxuICAgICNpdGVyYXRlIG92ZXIgY2VsbHMgb25lIGJ5IG9uZSwgZmlsbCBibG9jayBhcyB0aGV5IGNvbWUsIHJldmVyc2Ugb2YgcGFydCAxLCBraW5kYVxuICAgICNmb3IociBpbiAxOjkpIHtcbiAgICBmb3IgKHIgaW4gMTpucm93KHhkZikpIHtcbiAgICAgIGZvciAoYyBpbiAxOm5jb2woeGRmKSkge1xuICAgICAgICBpZiAociArIGJveFNpemUgPD0gbnJvdyh4ZGYpICYgYyArIGJveFNpemUgPD0gbmNvbCh4ZGYpKSB7XG4gICAgICAgICAgaWYgKCEoRkFMU0UgJWluJSBpcy5uYSh4ZGZbcjoociArIGJveFNpemUpLCBjOihjICsgYm94U2l6ZSldKSkpIHtcbiAgICAgICAgICAgIHhkZltyOihyICsgYm94U2l6ZSksIGM6KGMgKyBib3hTaXplKV0gPC0gKGJveFNpemUgKyAxKVxuICAgICAgICAgICAgYnJlYWtGbGFnIDwtIFRSVUVcbiAgICAgICAgICAgIGJyZWFrXG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIFxuICAgICAgfVxuICAgICAgaWYgKGJyZWFrRmxhZylcbiAgICAgICAgYnJlYWtcbiAgICB9XG4gICAgXG4gIH1cbiAgXG4gIHJldHVybih4ZGYpXG59XG5cbnJlZERGIDwtIHBhcnQyKHJlZERGLCBjb2xvckxpc3RbWzFdXVtdKVxub3JhbmdlREYgPC0gcGFydDIob3JhbmdlREYsIGNvbG9yTGlzdFtbMl1dW10pXG55ZWxsb3dERiA8LSBwYXJ0Mih5ZWxsb3dERiwgY29sb3JMaXN0W1szXV1bXSlcbmdyZWVuREYgPC0gcGFydDIoZ3JlZW5ERiwgY29sb3JMaXN0W1s0XV1bXSlcbmJsdWVERiA8LSBwYXJ0MihibHVlREYsIGNvbG9yTGlzdFtbNV1dW10pXG5pbmRpZ29ERiA8LSBwYXJ0MihpbmRpZ29ERiwgY29sb3JMaXN0W1s2XV1bXSlcbnZpb2xldERGIDwtIHBhcnQyKHZpb2xldERGLCBjb2xvckxpc3RbWzddXVtdKVxuXG5yZWRERiA8LSByZWRERltyb3dTdW1zKGlzLm5hKHJlZERGKSkgIT0gbmNvbChyZWRERiksXVxub3JhbmdlREYgPC0gb3JhbmdlREZbcm93U3Vtcyhpcy5uYShvcmFuZ2VERikpICE9IG5jb2wob3JhbmdlREYpLF1cbnllbGxvd0RGIDwtIHllbGxvd0RGW3Jvd1N1bXMoaXMubmEoeWVsbG93REYpKSAhPSBuY29sKHllbGxvd0RGKSxdXG5ncmVlbkRGIDwtIGdyZWVuREZbcm93U3Vtcyhpcy5uYShncmVlbkRGKSkgIT0gbmNvbChncmVlbkRGKSxdXG5ibHVlREYgPC0gYmx1ZURGW3Jvd1N1bXMoaXMubmEoYmx1ZURGKSkgIT0gbmNvbChibHVlREYpLF1cbmluZGlnb0RGIDwtIGluZGlnb0RGW3Jvd1N1bXMoaXMubmEoaW5kaWdvREYpKSAhPSBuY29sKGluZGlnb0RGKSxdXG52aW9sZXRERiA8LSB2aW9sZXRERltyb3dTdW1zKGlzLm5hKHZpb2xldERGKSkgIT0gbmNvbCh2aW9sZXRERiksXVxuYGBgIn0= -->
+<pre class="r"><code>part2 &lt;- function(xdf, xcolorList) {
+  for (i in 1:length(xcolorList)) {
+    breakFlag &lt;- FALSE
+    boxSize &lt;- as.numeric(unlist(xcolorList)[i]) - 1
+    
+    #iterate over cells one by one, fill block as they come, reverse of part 1, kinda
+    #for(r in 1:9) {
+    for (r in 1:nrow(xdf)) {
+      for (c in 1:ncol(xdf)) {
+        if (r + boxSize &lt;= nrow(xdf) &amp; c + boxSize &lt;= ncol(xdf)) {
+          if (!(FALSE %in% is.na(xdf[r:(r + boxSize), c:(c + boxSize)]))) {
+            xdf[r:(r + boxSize), c:(c + boxSize)] &lt;- (boxSize + 1)
+            breakFlag &lt;- TRUE
+            break
+          }
+        }
+        
+      }
+      if (breakFlag)
+        break
+    }
+    
+  }
+  
+  return(xdf)
+}
+
+redDF &lt;- part2(redDF, colorList[[1]][])
+orangeDF &lt;- part2(orangeDF, colorList[[2]][])
+yellowDF &lt;- part2(yellowDF, colorList[[3]][])
+greenDF &lt;- part2(greenDF, colorList[[4]][])
+blueDF &lt;- part2(blueDF, colorList[[5]][])
+indigoDF &lt;- part2(indigoDF, colorList[[6]][])
+violetDF &lt;- part2(violetDF, colorList[[7]][])
+
+redDF &lt;- redDF[rowSums(is.na(redDF)) != ncol(redDF),]
+orangeDF &lt;- orangeDF[rowSums(is.na(orangeDF)) != ncol(orangeDF),]
+yellowDF &lt;- yellowDF[rowSums(is.na(yellowDF)) != ncol(yellowDF),]
+greenDF &lt;- greenDF[rowSums(is.na(greenDF)) != ncol(greenDF),]
+blueDF &lt;- blueDF[rowSums(is.na(blueDF)) != ncol(blueDF),]
+indigoDF &lt;- indigoDF[rowSums(is.na(indigoDF)) != ncol(indigoDF),]
+violetDF &lt;- violetDF[rowSums(is.na(violetDF)) != ncol(violetDF),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud3JpdGUudGFibGUocmVkREYsIFwiLi4vUXVpbHRpbmcvY29sb3JzLmNzdlwiLCBjb2wubmFtZXMgPSBGQUxTRSwgcm93Lm5hbWVzID0gRkFMU0UsIHNlcCA9IFwiLFwiKVxud3JpdGUudGFibGUob3JhbmdlREYsIFwiLi4vUXVpbHRpbmcvY29sb3JzLmNzdlwiLCBjb2wubmFtZXMgPSBGQUxTRSwgcm93Lm5hbWVzID0gRkFMU0UsIHNlcCA9IFwiLFwiLCBhcHBlbmQgPSBUUlVFKVxud3JpdGUudGFibGUoeWVsbG93REYsIFwiLi4vUXVpbHRpbmcvY29sb3JzLmNzdlwiLCBjb2wubmFtZXMgPSBGQUxTRSwgcm93Lm5hbWVzID0gRkFMU0UsIHNlcCA9IFwiLFwiLCBhcHBlbmQgPSBUUlVFKVxud3JpdGUudGFibGUoZ3JlZW5ERiwgXCIuLi9RdWlsdGluZy9jb2xvcnMuY3N2XCIsIGNvbC5uYW1lcyA9IEZBTFNFLCByb3cubmFtZXMgPSBGQUxTRSwgc2VwID0gXCIsXCIsIGFwcGVuZCA9IFRSVUUpXG53cml0ZS50YWJsZShibHVlREYsIFwiLi4vUXVpbHRpbmcvY29sb3JzLmNzdlwiLCBjb2wubmFtZXMgPSBGQUxTRSwgcm93Lm5hbWVzID0gRkFMU0UsIHNlcCA9IFwiLFwiLCBhcHBlbmQgPSBUUlVFKVxud3JpdGUudGFibGUoaW5kaWdvREYsIFwiLi4vUXVpbHRpbmcvY29sb3JzLmNzdlwiLCBjb2wubmFtZXMgPSBGQUxTRSwgcm93Lm5hbWVzID0gRkFMU0UsIHNlcCA9IFwiLFwiLCBhcHBlbmQgPSBUUlVFKVxud3JpdGUudGFibGUodmlvbGV0REYsIFwiLi4vUXVpbHRpbmcvY29sb3JzLmNzdlwiLCBjb2wubmFtZXMgPSBGQUxTRSwgcm93Lm5hbWVzID0gRkFMU0UsIHNlcCA9IFwiLFwiLCBhcHBlbmQgPSBUUlVFKVxuYGBgIn0= -->
+<pre class="r"><code>write.table(redDF, &quot;../Quilting/colors.csv&quot;, col.names = FALSE, row.names = FALSE, sep = &quot;,&quot;)
+write.table(orangeDF, &quot;../Quilting/colors.csv&quot;, col.names = FALSE, row.names = FALSE, sep = &quot;,&quot;, append = TRUE)
+write.table(yellowDF, &quot;../Quilting/colors.csv&quot;, col.names = FALSE, row.names = FALSE, sep = &quot;,&quot;, append = TRUE)
+write.table(greenDF, &quot;../Quilting/colors.csv&quot;, col.names = FALSE, row.names = FALSE, sep = &quot;,&quot;, append = TRUE)
+write.table(blueDF, &quot;../Quilting/colors.csv&quot;, col.names = FALSE, row.names = FALSE, sep = &quot;,&quot;, append = TRUE)
+write.table(indigoDF, &quot;../Quilting/colors.csv&quot;, col.names = FALSE, row.names = FALSE, sep = &quot;,&quot;, append = TRUE)
+write.table(violetDF, &quot;../Quilting/colors.csv&quot;, col.names = FALSE, row.names = FALSE, sep = &quot;,&quot;, append = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWluKHNwYWNlcylcblxuYGBgIn0= -->
+<pre class="r"><code>min(spaces)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMjgyOTI3MjkzMDMwMjlcIlxuIn0= -->
-<pre><code>[1] &quot;28292729303029&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDJcbiJ9 -->
+<pre><code>[1] 2</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCmBgYHtyfQp3aWR0aCA8LSBmbG9vcigobmNvbChkZikgLSAyKSAqIC42MjUpCmRmIDwtIG1hc3RlckRGCmNvbG9ycyA8LSBjKCJyIiwgIm8iLCAieSIsICJnIiwgImIiLCAiaSIsICJ2IikKY29sb3JDb3VudCA8LSByZXAoMCwgNykKZm9yKGkgaW4gMTo3KQogIGZvcihyIGluIDI6bnJvdyhkZiktMSkKICAgIGZvcihjIGluIDI6bmNvbChkZiktMSkKICAgICAgaWYoY29sb3JzW2ldID09IGRmW3IsY10pCiAgICAgICAgY29sb3JDb3VudFtpXSA8LSBjb2xvckNvdW50W2ldICsgMQoKcGFzdGUoY2VpbGluZyhjb2xvckNvdW50IC8gd2lkdGgpLCBjb2xsYXBzZT0iIikKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmRmIDwtIHJlYWQuY3N2KCIuLi9RdWlsdGluZy9pbnB1dC5jc3YiLCBjb2xDbGFzc2VzID0gcmVwKCJjaGFyYWN0ZXIiLCAxMCksIGhlYWRlciA9IEZBTFNFKQptYXN0ZXJERiA8LSBkZgpgYGAKCgpgYGB7ciwgd2FybmluZz1GQUxTRX0KcmVkIDwtIGMoKQpvcmFuZ2UgPC0gYygpCnllbGxvdyA8LSBjKCkKZ3JlZW4gPC0gYygpCmJsdWUgPC0gYygpCmluZGlnbyA8LSBjKCkKdmlvbGV0IDwtIGMoKQoKY29sb3JzIDwtIGMoInIiLCAibyIsICJ5IiwgImciLCAiYiIsICJpIiwgInYiKQpjb2xvckNvdW50IDwtIHJlcCgwLCA3KQoKYm94U2l6ZSA8LSAwCgpvbGRDb2xvciA8LSAieiIKCmZvcihyIGluIDI6KG5yb3coZGYpIC0gMSkpIHsKICBmb3IoYyBpbiAyOihuY29sKGRmKSAtIDEpKSB7CiAgICBjdXJyZW50Q29sb3IgPC0gZGZbciwgY10KICAgIGlmKCFpcy5uYShjdXJyZW50Q29sb3IpKSB7CiAgICAgIGZvcihwbGFjZSBpbiBjOihuY29sKGRmKSAtIDEpKSB7CiAgICAgICAgaWYoIWlzLm5hKGRmW3IsIHBsYWNlXSkgJiBjdXJyZW50Q29sb3IgPT0gZGZbciwgcGxhY2VdKQogICAgICAgICAgYm94U2l6ZSA8LSBib3hTaXplICsgMQogICAgICAgIGVsc2UKICAgICAgICAgIGJyZWFrCiAgICAgIH0KICAgICAgCiAgICAgIHRlc3RDb2xvciA8LSBhcy5kYXRhLmZyYW1lKGRmWyhyKToociArIGJveFNpemUpLCBjOihjICsgYm94U2l6ZSldKVsxLCAxXQogICAgICBpZiAodGVzdENvbG9yID09ICJyIikKICAgICAgICByZWQgPC0gYXBwZW5kKHJlZCwgYm94U2l6ZSkKICAgICAgaWYgKHRlc3RDb2xvciA9PSAibyIpCiAgICAgICAgb3JhbmdlIDwtIGFwcGVuZChvcmFuZ2UsIGJveFNpemUpCiAgICAgIGlmICh0ZXN0Q29sb3IgPT0gInkiKQogICAgICAgIHllbGxvdyA8LSBhcHBlbmQoeWVsbG93LCBib3hTaXplKQogICAgICBpZiAodGVzdENvbG9yID09ICJnIikKICAgICAgICBncmVlbiA8LSBhcHBlbmQoZ3JlZW4sIGJveFNpemUpCiAgICAgIGlmICh0ZXN0Q29sb3IgPT0gImIiKQogICAgICAgIGJsdWUgPC0gYXBwZW5kKGJsdWUsIGJveFNpemUpCiAgICAgIGlmICh0ZXN0Q29sb3IgPT0gImkiKQogICAgICAgIGluZGlnbyA8LSBhcHBlbmQoaW5kaWdvLCBib3hTaXplKQogICAgICBpZiAodGVzdENvbG9yID09ICJ2IikKICAgICAgICB2aW9sZXQgPC0gYXBwZW5kKHZpb2xldCwgYm94U2l6ZSkKICAgICAgCiAgICAgIGJveFNpemUgPC0gYm94U2l6ZSAtIDEKICAgICAgCiAgICAgIAogICAgICBjb2xvckNvdW50W21hdGNoKGRmW3IsIGNdLCBjb2xvcnMpXSA8LSBjb2xvckNvdW50W21hdGNoKGRmW3IsIGNdLCBjb2xvcnMpXSArIDEKICAgICAgZGZbKHIpOihyICsgYm94U2l6ZSksIGM6KGMgKyBib3hTaXplKV0gPC0gTkEKICAgICAgYm94U2l6ZSA8LSAwCiAgICAgIG9sZENvbG9yIDwtIGN1cnJlbnRDb2xvcgogICAgfQogICAgCiAgfQp9Cgpjb2xvckxpc3QgPC0gbGlzdChyZWQsIG9yYW5nZSwgeWVsbG93LCBncmVlbiwgYmx1ZSwgaW5kaWdvLCB2aW9sZXQpCmBgYAoKYGBge3IsIHdhcm5pbmc9RkFMU0V9Cm5ld0xpc3QgPC0gbGlzdCgpCmZvcihpIGluIDE6bGVuZ3RoKGNvbG9yTGlzdCkpCiAgbmV3TGlzdCA8LSBhcHBlbmQobmV3TGlzdCwgbGlzdChzb3J0KGFzLnZlY3Rvcihjb2xvckxpc3RbW2ldXVtdKSwgZGVjcmVhc2luZyA9IFRSVUUpKSkKY29sb3JMaXN0IDwtIG5ld0xpc3QKCndpZHRoIDwtIGZsb29yKChuY29sKGRmKSAtIDIpICogLjYyNSkKcmVkREYgPC0gZGF0YS5mcmFtZShtYXRyaXgoTkEsIG5yb3c9c3VtKHJlZCksIG5jb2w9d2lkdGgpKQpvcmFuZ2VERiA8LSBkYXRhLmZyYW1lKG1hdHJpeChOQSwgbnJvdz1zdW0ob3JhbmdlKSwgbmNvbD13aWR0aCkpCnllbGxvd0RGIDwtIGRhdGEuZnJhbWUobWF0cml4KE5BLCBucm93PXN1bSh5ZWxsb3cpLCBuY29sPXdpZHRoKSkKZ3JlZW5ERiA8LSBkYXRhLmZyYW1lKG1hdHJpeChOQSwgbnJvdz1zdW0oZ3JlZW4pLCBuY29sPXdpZHRoKSkKYmx1ZURGIDwtIGRhdGEuZnJhbWUobWF0cml4KE5BLCBucm93PXN1bShibHVlKSwgbmNvbD13aWR0aCkpCmluZGlnb0RGIDwtIGRhdGEuZnJhbWUobWF0cml4KE5BLCBucm93PXN1bShpbmRpZ28pLCBuY29sPXdpZHRoKSkKdmlvbGV0REYgPC0gZGF0YS5mcmFtZShtYXRyaXgoTkEsIG5yb3c9c3VtKHZpb2xldCksIG5jb2w9d2lkdGgpKQpgYGAKCgpgYGB7ciwgd2FybmluZz1GQUxTRX0KcGFydDIgPC0gZnVuY3Rpb24oeGRmLCB4Y29sb3JMaXN0KSB7CiAgZm9yIChpIGluIDE6bGVuZ3RoKHhjb2xvckxpc3QpKSB7CiAgICBicmVha0ZsYWcgPC0gRkFMU0UKICAgIGJveFNpemUgPC0gYXMubnVtZXJpYyh1bmxpc3QoeGNvbG9yTGlzdClbaV0pIC0gMQogICAgCiAgICAjaXRlcmF0ZSBvdmVyIGNlbGxzIG9uZSBieSBvbmUsIGZpbGwgYmxvY2sgYXMgdGhleSBjb21lLCByZXZlcnNlIG9mIHBhcnQgMSwga2luZGEKICAgICNmb3IociBpbiAxOjkpIHsKICAgIGZvciAociBpbiAxOm5yb3coeGRmKSkgewogICAgICBmb3IgKGMgaW4gMTpuY29sKHhkZikpIHsKICAgICAgICBpZiAociArIGJveFNpemUgPD0gbnJvdyh4ZGYpICYgYyArIGJveFNpemUgPD0gbmNvbCh4ZGYpKSB7CiAgICAgICAgICBpZiAoIShGQUxTRSAlaW4lIGlzLm5hKHhkZltyOihyICsgYm94U2l6ZSksIGM6KGMgKyBib3hTaXplKV0pKSkgewogICAgICAgICAgICB4ZGZbcjoociArIGJveFNpemUpLCBjOihjICsgYm94U2l6ZSldIDwtIChib3hTaXplICsgMSkKICAgICAgICAgICAgYnJlYWtGbGFnIDwtIFRSVUUKICAgICAgICAgICAgYnJlYWsKICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgCiAgICAgIH0KICAgICAgaWYgKGJyZWFrRmxhZykKICAgICAgICBicmVhawogICAgfQogICAgCiAgfQogIAogIHJldHVybih4ZGYpCn0KCnJlZERGIDwtIHBhcnQyKHJlZERGLCBjb2xvckxpc3RbWzFdXVtdKQpvcmFuZ2VERiA8LSBwYXJ0MihvcmFuZ2VERiwgY29sb3JMaXN0W1syXV1bXSkKeWVsbG93REYgPC0gcGFydDIoeWVsbG93REYsIGNvbG9yTGlzdFtbM11dW10pCmdyZWVuREYgPC0gcGFydDIoZ3JlZW5ERiwgY29sb3JMaXN0W1s0XV1bXSkKYmx1ZURGIDwtIHBhcnQyKGJsdWVERiwgY29sb3JMaXN0W1s1XV1bXSkKaW5kaWdvREYgPC0gcGFydDIoaW5kaWdvREYsIGNvbG9yTGlzdFtbNl1dW10pCnZpb2xldERGIDwtIHBhcnQyKHZpb2xldERGLCBjb2xvckxpc3RbWzddXVtdKQoKcmVkREYgPC0gcmVkREZbcm93U3Vtcyhpcy5uYShyZWRERikpICE9IG5jb2wocmVkREYpLF0Kb3JhbmdlREYgPC0gb3JhbmdlREZbcm93U3Vtcyhpcy5uYShvcmFuZ2VERikpICE9IG5jb2wob3JhbmdlREYpLF0KeWVsbG93REYgPC0geWVsbG93REZbcm93U3Vtcyhpcy5uYSh5ZWxsb3dERikpICE9IG5jb2woeWVsbG93REYpLF0KZ3JlZW5ERiA8LSBncmVlbkRGW3Jvd1N1bXMoaXMubmEoZ3JlZW5ERikpICE9IG5jb2woZ3JlZW5ERiksXQpibHVlREYgPC0gYmx1ZURGW3Jvd1N1bXMoaXMubmEoYmx1ZURGKSkgIT0gbmNvbChibHVlREYpLF0KaW5kaWdvREYgPC0gaW5kaWdvREZbcm93U3Vtcyhpcy5uYShpbmRpZ29ERikpICE9IG5jb2woaW5kaWdvREYpLF0KdmlvbGV0REYgPC0gdmlvbGV0REZbcm93U3Vtcyhpcy5uYSh2aW9sZXRERikpICE9IG5jb2wodmlvbGV0REYpLF0KYGBgCgpgYGB7cn0Kd3JpdGUudGFibGUocmVkREYsICIuLi9RdWlsdGluZy9jb2xvcnMuY3N2IiwgY29sLm5hbWVzID0gRkFMU0UsIHJvdy5uYW1lcyA9IEZBTFNFLCBzZXAgPSAiLCIpCndyaXRlLnRhYmxlKG9yYW5nZURGLCAiLi4vUXVpbHRpbmcvY29sb3JzLmNzdiIsIGNvbC5uYW1lcyA9IEZBTFNFLCByb3cubmFtZXMgPSBGQUxTRSwgc2VwID0gIiwiLCBhcHBlbmQgPSBUUlVFKQp3cml0ZS50YWJsZSh5ZWxsb3dERiwgIi4uL1F1aWx0aW5nL2NvbG9ycy5jc3YiLCBjb2wubmFtZXMgPSBGQUxTRSwgcm93Lm5hbWVzID0gRkFMU0UsIHNlcCA9ICIsIiwgYXBwZW5kID0gVFJVRSkKd3JpdGUudGFibGUoZ3JlZW5ERiwgIi4uL1F1aWx0aW5nL2NvbG9ycy5jc3YiLCBjb2wubmFtZXMgPSBGQUxTRSwgcm93Lm5hbWVzID0gRkFMU0UsIHNlcCA9ICIsIiwgYXBwZW5kID0gVFJVRSkKd3JpdGUudGFibGUoYmx1ZURGLCAiLi4vUXVpbHRpbmcvY29sb3JzLmNzdiIsIGNvbC5uYW1lcyA9IEZBTFNFLCByb3cubmFtZXMgPSBGQUxTRSwgc2VwID0gIiwiLCBhcHBlbmQgPSBUUlVFKQp3cml0ZS50YWJsZShpbmRpZ29ERiwgIi4uL1F1aWx0aW5nL2NvbG9ycy5jc3YiLCBjb2wubmFtZXMgPSBGQUxTRSwgcm93Lm5hbWVzID0gRkFMU0UsIHNlcCA9ICIsIiwgYXBwZW5kID0gVFJVRSkKd3JpdGUudGFibGUodmlvbGV0REYsICIuLi9RdWlsdGluZy9jb2xvcnMuY3N2IiwgY29sLm5hbWVzID0gRkFMU0UsIHJvdy5uYW1lcyA9IEZBTFNFLCBzZXAgPSAiLCIsIGFwcGVuZCA9IFRSVUUpCmBgYAoKYGBge3IsIHdhcm5pbmc9RkFMU0V9CnIgPC0gYXMubnVtZXJpYyhhcy52ZWN0b3IocmVkREZbbnJvdyhyZWRERiksXSkpCm8gPC0gYXMubnVtZXJpYyhhcy52ZWN0b3Iob3JhbmdlREZbbnJvdyhvcmFuZ2VERiksXSkpCnkgPC0gYXMubnVtZXJpYyhhcy52ZWN0b3IoeWVsbG93REZbbnJvdyh5ZWxsb3dERiksXSkpIApnIDwtIGFzLm51bWVyaWMoYXMudmVjdG9yKGdyZWVuREZbbnJvdyhncmVlbkRGKSxdKSkKYiA8LSBhcy5udW1lcmljKGFzLnZlY3RvcihibHVlREZbbnJvdyhibHVlREYpLF0pKQppIDwtIGFzLm51bWVyaWMoYXMudmVjdG9yKGluZGlnb0RGW25yb3coaW5kaWdvREYpLF0pKSAKdiA8LSBhcy5udW1lcmljKGFzLnZlY3Rvcih2aW9sZXRERltucm93KHZpb2xldERGKSxdKSkKCmxlZnRvdmVyIDwtIGRhdGEuZnJhbWUociwgbywgeSwgZywgYiwgaSwgdikKbGVmdG92ZXIKCnNwYWNlcyA8LSBjb2xTdW1zKGlzLm5hKGxlZnRvdmVyKSkKc3BhY2VzCgptaW4oc3BhY2VzKQpgYGAKCgo=</div>
 
 
 
@@ -1857,7 +2006,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("Solver Part 2.Rmd");
+  window.initializeSourceEmbed("Solver Part (who knows).Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

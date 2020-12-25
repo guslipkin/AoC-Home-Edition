@@ -22,9 +22,9 @@ df[c(1,nrow(df)),] <- "x"
 df[,c(1,ncol(df))] <- "x"
 
 colors <- c("r", "o", "y", "g", "b", "i", "v")
-squaresRemaining <- rep(rowCount * colCount, 7)
+squaresRemaining <- rep((rowCount * colCount), 7)
 
-maxSize <- floor(sqrt(ncol(df)) - 1)
+maxSize <- floor(sqrt(ncol(df) - 1))
 fullFlag <- FALSE
 
 sameCounter <- 0
@@ -55,6 +55,7 @@ while(!fullFlag) {
         
       leftover <- squaresRemaining[colorNum] - ((boxSize + 1) * (boxSize + 1))
       
+      #if((r + boxSize) <= (nrow(df) - 1) & (c + boxSize) <= (ncol(df) - 1)) {
       if((r + boxSize) <= (nrow(df) - 1) & (c + boxSize) <= (ncol(df) - 1) & leftover >= 0) {
         
         temp <- as.data.frame(df[(r-1):(r+boxSize+1), (c-1):(c+boxSize+1)])
@@ -74,7 +75,7 @@ while(!fullFlag) {
         }
       }
         
-      if(!is.na(squaresRemaining[colorNum]) & squaresRemaining[colorNum] <= 6000) {
+      if(!is.na(squaresRemaining[colorNum]) & squaresRemaining[colorNum] <= (.75 * rowCount * colCount)) {
         colors <- colors[-colorNum]
         squaresRemaining <- squaresRemaining[-colorNum]
       }
@@ -139,14 +140,13 @@ for(r in 2:(nrow(df)-1)) {
   }
 }
 
-password <- sum(colorCount)
-password
+password1 <- sum(colorCount)
 ```
 
 # Part 2
 
 # Solver
-```{r, warning=FALSE}
+```{r}
 df <- masterDF
 
 red <- c()
@@ -210,7 +210,7 @@ for(i in 1:length(colorList))
   newList <- append(newList, list(sort(as.vector(colorList[[i]][]), decreasing = TRUE)))
 colorList <- newList
 
-width <- 40
+width <- floor((ncol(df) - 2) * .625)
 redDF <- data.frame(matrix(NA, nrow=sum(red), ncol=width))
 orangeDF <- data.frame(matrix(NA, nrow=sum(orange), ncol=width))
 yellowDF <- data.frame(matrix(NA, nrow=sum(yellow), ncol=width))
@@ -225,12 +225,15 @@ part2 <- function(xdf, xcolorList) {
     boxSize <- as.numeric(unlist(xcolorList)[i]) - 1
     
     #iterate over cells one by one, fill block as they come, reverse of part 1, kinda
+    #for(r in 1:9) {
     for (r in 1:nrow(xdf)) {
       for (c in 1:ncol(xdf)) {
-        if (is.na(xdf[r, c]) & r + boxSize <= nrow(xdf) & c + boxSize <= ncol(xdf)) {
-          xdf[r:(r + boxSize), c:(c + boxSize)] <- TRUE
-          breakFlag <- TRUE
-          break
+        if (r + boxSize <= nrow(xdf) & c + boxSize <= ncol(xdf)) {
+          if (!(FALSE %in% is.na(xdf[r:(r + boxSize), c:(c + boxSize)]))) {
+            xdf[r:(r + boxSize), c:(c + boxSize)] <- (boxSize + 1)
+            breakFlag <- TRUE
+            break
+          }
         }
         
       }
@@ -259,7 +262,13 @@ b <- nrow(blueDF[rowSums(is.na(blueDF)) != ncol(blueDF),])
 i <- nrow(indigoDF[rowSums(is.na(indigoDF)) != ncol(indigoDF),])
 v <- nrow(violetDF[rowSums(is.na(violetDF)) != ncol(violetDF),])
 
-password <- paste(r, o, y, g, b, i, v, sep="")
-password
+password2 <- paste(r, o, y, g, b, i, v, sep="")
+```
+
+# Solutions
+
+```{r}
+paste("Password 1:", password1)
+paste("Password 2:", password2)
 ```
 

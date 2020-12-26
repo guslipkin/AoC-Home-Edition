@@ -13,8 +13,8 @@ library(readxl)
 # Part 1
 ## Generator
 ```{r, warning=FALSE}
-rowCount <- 4
-colCount <- 5
+rowCount <- 62
+colCount <- 32
 
 df <- data.frame(matrix(NA, nrow=(rowCount + 2), ncol=(colCount + 2)))
 
@@ -69,9 +69,7 @@ while(!fullFlag) {
         if(!(FALSE %in% is.na(as.data.frame(df[r:(r+boxSize), c:(c+boxSize)]))) & !is.element(color, unlist(temp))) {
             validFlag <- TRUE
             squaresRemaining[colorNum] <- leftover
-            for(br in 0:boxSize)
-              for(bc in 0:boxSize)
-                df[r + br, c + bc] <- color
+            df[r:(r+boxSize), c:(c+boxSize)] <- color
         }
       }
         

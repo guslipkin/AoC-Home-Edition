@@ -3,13 +3,20 @@ title: "R Notebook"
 output: html_notebook
 ---
 
+* Get patch distribution for each color
+* Count colors and re-balance to reduce waste
+* Convert original input to numbers
+* Re-generate input until one works, if none work, go back to step 2
+
 ```{r}
-df <- read.csv("../Quilting/input.csv", colClasses = rep("character", 10), header = FALSE)
+df <- read.csv("/Users/guslipkin/Documents/AoC-Home-Edition/Quilting/input.csv", colClasses = rep("character", 10), header = FALSE)
 masterDF <- df
 ```
 
 
 ```{r, warning=FALSE}
+numberDF <- df
+
 red <- c()
 orange <- c()
 yellow <- c()
@@ -28,6 +35,7 @@ oldColor <- "z"
 for(r in 2:(nrow(df) - 1)) {
   for(c in 2:(ncol(df) - 1)) {
     currentColor <- df[r, c]
+    
     if(!is.na(currentColor)) {
       for(place in c:(ncol(df) - 1)) {
         if(!is.na(df[r, place]) & currentColor == df[r, place])
@@ -36,7 +44,7 @@ for(r in 2:(nrow(df) - 1)) {
           break
       }
       
-      testColor <- as.data.frame(df[(r):(r + boxSize), c:(c + boxSize)])[1, 1]
+      testColor <- as.data.frame(df[r:(r + boxSize), c:(c + boxSize)])[1, 1]
       if (testColor == "r")
         red <- append(red, boxSize)
       if (testColor == "o")
@@ -56,7 +64,8 @@ for(r in 2:(nrow(df) - 1)) {
       
       
       colorCount[match(df[r, c], colors)] <- colorCount[match(df[r, c], colors)] + 1
-      df[(r):(r + boxSize), c:(c + boxSize)] <- NA
+      numberDF[r:(r + boxSize), c:(c + boxSize)] <- boxSize
+      df[r:(r + boxSize), c:(c + boxSize)] <- NA
       boxSize <- 0
       oldColor <- currentColor
     }
@@ -66,6 +75,7 @@ for(r in 2:(nrow(df) - 1)) {
 
 colorList <- list(red, orange, yellow, green, blue, indigo, violet)
 ```
+
 
 ```{r, warning=FALSE}
 newList <- list()
@@ -120,6 +130,14 @@ blueDF <- part2(blueDF, colorList[[5]][])
 indigoDF <- part2(indigoDF, colorList[[6]][])
 violetDF <- part2(violetDF, colorList[[7]][])
 
+redDF <- redDF[rowSums(is.na(redDF)) > 0,]
+orangeDF <- orangeDF[rowSums(is.na(orangeDF)) > 0,]
+yellowDF <- yellowDF[rowSums(is.na(yellowDF)) > 0,]
+greenDF <- greenDF[rowSums(is.na(greenDF)) > 0,]
+blueDF <- blueDF[rowSums(is.na(blueDF)) > 0,]
+indigoDF <- indigoDF[rowSums(is.na(indigoDF)) > 0,]
+violetDF <- violetDF[rowSums(is.na(violetDF)) > 0,]
+
 redDF <- redDF[rowSums(is.na(redDF)) != ncol(redDF),]
 orangeDF <- orangeDF[rowSums(is.na(orangeDF)) != ncol(orangeDF),]
 yellowDF <- yellowDF[rowSums(is.na(yellowDF)) != ncol(yellowDF),]
@@ -129,7 +147,7 @@ indigoDF <- indigoDF[rowSums(is.na(indigoDF)) != ncol(indigoDF),]
 violetDF <- violetDF[rowSums(is.na(violetDF)) != ncol(violetDF),]
 ```
 
-```{r}
+```{r, eval=FALSE}
 write.table(redDF, "../Quilting/colors.csv", col.names = FALSE, row.names = FALSE, sep = ",")
 write.table(orangeDF, "../Quilting/colors.csv", col.names = FALSE, row.names = FALSE, sep = ",", append = TRUE)
 write.table(yellowDF, "../Quilting/colors.csv", col.names = FALSE, row.names = FALSE, sep = ",", append = TRUE)
@@ -153,8 +171,98 @@ leftover
 
 spaces <- colSums(is.na(leftover))
 spaces
-
-min(spaces)
 ```
+
+```{r}
+rowCount <- 10
+colCount <- 8
+
+df <- data.frame(matrix(NA, nrow=(rowCount + 2), ncol=(colCount + 2)))
+
+df[c(1,nrow(df)),] <- "x"
+df[,c(1,ncol(df))] <- "x"
+
+colors <- c("r", "o", "y", "g", "b", "i", "v")
+squaresRemaining <- rep((rowCount * colCount), 7)
+
+maxSize <- floor(sqrt(ncol(df) - 1))
+fullFlag <- FALSE
+
+sameCounter <- 0
+sameCheck <- squaresRemaining
+
+rowFlip <- TRUE
+
+while(!fullFlag) {
+  if(rowFlip) {
+    rowSeq <- 2:(nrow(df)-1)
+    colSeq <- 2:(ncol(df)-1)
+    rowFlip <- FALSE
+  }
+  else {
+    rowSeq <- (nrow(df)-1):2
+    colSeq <- (ncol(df)-1):2
+    rowFlip <- TRUE
+  }
+  for(r in rowSeq) {
+    for(c in colSeq) {
+      
+      if(is.na(df[r,c])) {
+      validFlag <- FALSE
+      
+      boxSize <- floor(runif(1, min = 0, max = maxSize))
+      colorNum <- floor(runif(1, min = 1, max = length(colors) + 1))
+      color <- colors[colorNum]
+        
+      leftover <- squaresRemaining[colorNum] - ((boxSize + 1) * (boxSize + 1))
+      
+      #if((r + boxSize) <= (nrow(df) - 1) & (c + boxSize) <= (ncol(df) - 1)) {
+      if((r + boxSize) <= (nrow(df) - 1) & (c + boxSize) <= (ncol(df) - 1) & leftover >= 0) {
+        
+        temp <- as.data.frame(df[(r-1):(r+boxSize+1), (c-1):(c+boxSize+1)])
+        temp[2:(nrow(temp)-1),2:(ncol(temp)-1)] <- NA
+        temp[temp == "x"] <- NA
+        if(nrow(temp) == 1)
+          temp[1,1] <- NA
+        else
+          temp[c(1,nrow(temp)), c(1,ncol(temp))] <- NA
+        
+        if(!(FALSE %in% is.na(as.data.frame(df[r:(r+boxSize), c:(c+boxSize)]))) & !is.element(color, unlist(temp))) {
+            validFlag <- TRUE
+            squaresRemaining[colorNum] <- leftover
+            for(br in 0:boxSize)
+              for(bc in 0:boxSize)
+                df[r + br, c + bc] <- color
+        }
+      }
+        
+      if(!is.na(squaresRemaining[colorNum]) & squaresRemaining[colorNum] <= (.75 * rowCount * colCount)) {
+        colors <- colors[-colorNum]
+        squaresRemaining <- squaresRemaining[-colorNum]
+      }
+      
+      }
+      
+    }
+  }
+  
+  if(length(colors) == 1 | sameCounter == 25)
+    df[is.na(df)] <- "w"
+  
+  if(!(TRUE %in% is.na(df)))
+    fullFlag <- TRUE
+  
+  if(sameCheck == squaresRemaining)
+    sameCounter <- sameCounter + 1
+  else {
+    sameCheck <- squaresRemaining
+    sameCounter <- 0
+  }
+
+}
+
+masterDF <- df
+```
+
 
 

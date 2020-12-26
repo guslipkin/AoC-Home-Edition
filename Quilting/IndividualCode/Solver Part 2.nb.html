@@ -1799,18 +1799,30 @@ summary {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGFzdGUoY2VpbGluZyhjb2xvckNvdW50IC8gd2lkdGgpLCBjb2xsYXBzZT1cIlwiKVxuXG5gYGAifQ== -->
-<pre class="r"><code>paste(ceiling(colorCount / width), collapse=&quot;&quot;)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2RmIDwtIHJlYWQuY3N2KFwiL1VzZXJzL2d1c2xpcGtpbi9Eb2N1bWVudHMvQW9DLUhvbWUtRWRpdGlvbi9RdWlsdGluZy9pbnB1dC5jc3ZcIiwgY29sQ2xhc3NlcyA9IHJlcChcImNoYXJhY3RlclwiLCAxMCksIGhlYWRlciA9IEZBTFNFKVxuXG53aWR0aCA8LSBmbG9vcigobmNvbChkZikgLSAyKSAqIC42MjUpXG4jZGYgPC0gbWFzdGVyREZcbmNvbG9ycyA8LSBjKFwiclwiLCBcIm9cIiwgXCJ5XCIsIFwiZ1wiLCBcImJcIiwgXCJpXCIsIFwidlwiKVxuY29sb3JDb3VudCA8LSByZXAoMCwgNylcbmZvcihpIGluIDE6NylcbiAgZm9yKHIgaW4gMjpucm93KGRmKS0xKVxuICAgIGZvcihjIGluIDI6bmNvbChkZiktMSlcbiAgICAgIGlmKGNvbG9yc1tpXSA9PSBkZltyLGNdKVxuICAgICAgICBjb2xvckNvdW50W2ldIDwtIGNvbG9yQ291bnRbaV0gKyAxXG5cbnBhc3RlKGNlaWxpbmcoY29sb3JDb3VudCAvIHdpZHRoKSwgY29sbGFwc2U9XCJcIilcbmBgYCJ9 -->
+<pre class="r"><code>#df &lt;- read.csv(&quot;/Users/guslipkin/Documents/AoC-Home-Edition/Quilting/input.csv&quot;, colClasses = rep(&quot;character&quot;, 10), header = FALSE)
+
+width &lt;- floor((ncol(df) - 2) * .625)
+#df &lt;- masterDF
+colors &lt;- c(&quot;r&quot;, &quot;o&quot;, &quot;y&quot;, &quot;g&quot;, &quot;b&quot;, &quot;i&quot;, &quot;v&quot;)
+colorCount &lt;- rep(0, 7)
+for(i in 1:7)
+  for(r in 2:nrow(df)-1)
+    for(c in 2:ncol(df)-1)
+      if(colors[i] == df[r,c])
+        colorCount[i] &lt;- colorCount[i] + 1
+
+paste(ceiling(colorCount / width), collapse=&quot;&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMjgyOTI3MjkzMDMwMjlcIlxuIn0= -->
-<pre><code>[1] &quot;28292729303029&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMTUxNDE1MTQxNDE1MTVcIlxuIn0= -->
+<pre><code>[1] &quot;15141514141515&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>[1] “16111617191013”</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCmBgYHtyfQp3aWR0aCA8LSBmbG9vcigobmNvbChkZikgLSAyKSAqIC42MjUpCmRmIDwtIG1hc3RlckRGCmNvbG9ycyA8LSBjKCJyIiwgIm8iLCAieSIsICJnIiwgImIiLCAiaSIsICJ2IikKY29sb3JDb3VudCA8LSByZXAoMCwgNykKZm9yKGkgaW4gMTo3KQogIGZvcihyIGluIDI6bnJvdyhkZiktMSkKICAgIGZvcihjIGluIDI6bmNvbChkZiktMSkKICAgICAgaWYoY29sb3JzW2ldID09IGRmW3IsY10pCiAgICAgICAgY29sb3JDb3VudFtpXSA8LSBjb2xvckNvdW50W2ldICsgMQoKcGFzdGUoY2VpbGluZyhjb2xvckNvdW50IC8gd2lkdGgpLCBjb2xsYXBzZT0iIikKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCmBgYHtyfQpkZiA8LSByZWFkLmNzdigiL1VzZXJzL2d1c2xpcGtpbi9Eb2N1bWVudHMvQW9DLUhvbWUtRWRpdGlvbi9RdWlsdGluZy9pbnB1dC5jc3YiLCBjb2xDbGFzc2VzID0gcmVwKCJjaGFyYWN0ZXIiLCAxMCksIGhlYWRlciA9IEZBTFNFKQoKd2lkdGggPC0gZmxvb3IoKG5jb2woZGYpIC0gMikgKiAuNjI1KQpjb2xvcnMgPC0gYygiciIsICJvIiwgInkiLCAiZyIsICJiIiwgImkiLCAidiIpCmNvbG9yQ291bnQgPC0gcmVwKDAsIDcpCmZvcihpIGluIDE6NykKICBmb3IociBpbiAyOm5yb3coZGYpLTEpCiAgICBmb3IoYyBpbiAyOm5jb2woZGYpLTEpCiAgICAgIGlmKGNvbG9yc1tpXSA9PSBkZltyLGNdKQogICAgICAgIGNvbG9yQ291bnRbaV0gPC0gY29sb3JDb3VudFtpXSArIDEKCnBhc3RlKGNlaWxpbmcoY29sb3JDb3VudCAvIHdpZHRoKSwgY29sbGFwc2U9IiIpCmBgYAoKWzFdICIxNjExMTYxNzE5MTAxMyI=</div>
 
 
 

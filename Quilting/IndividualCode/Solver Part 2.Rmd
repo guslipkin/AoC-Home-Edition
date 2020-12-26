@@ -5,8 +5,9 @@ output: html_notebook
 
 
 ```{r}
+df <- read.csv("/Users/guslipkin/Documents/AoC-Home-Edition/Quilting/input.csv", colClasses = rep("character", 10), header = FALSE)
+
 width <- floor((ncol(df) - 2) * .625)
-df <- masterDF
 colors <- c("r", "o", "y", "g", "b", "i", "v")
 colorCount <- rep(0, 7)
 for(i in 1:7)
@@ -18,3 +19,4 @@ for(i in 1:7)
 paste(ceiling(colorCount / width), collapse="")
 ```
 
+[1] "16111617191013"

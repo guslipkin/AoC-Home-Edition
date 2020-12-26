@@ -39,9 +39,10 @@ x	x	x	x	x	x	x	x	x	x
 ```
 
 and in color
+
 ![](Pictures/SampleInput.png){width=25%}
 
-You're trying to figure out if it is more economical to buy pre-cut patches of fabric or fabric by the yard. The base of the quilt will be white so you don't need to count those. You want to know ```r paste("how many patches you will need for the quilt")```.
+You're trying to figure out if it is more economical to buy pre-cut square patches of fabric or fabric by the yard. The base of the quilt will be white so you don't need to count those. You want to know ```r paste("how many patches you will need for the quilt")```.
 
 Using the example input, the result would is as follows.
 
@@ -55,6 +56,6 @@ blue | 5
 indigo | 5
 violet | 5
 
-To get the answer, you add all the square counts together (but not white) , which is ```r paste("5 + 5 + 5 + 9 + 5 + 5 + 5 = 39")```. Thus, the answer is `39`.
+To get the answer, you add all the patch counts together (but not white) , which is ```r paste("5 + 5 + 5 + 9 + 5 + 5 + 5 = 39")```. Thus, the answer is `39`.
 
-Of course, your pattern is much larger. ```r paste("How many squares of fabric do you need to make the quilt?")```
+Of course, your pattern is much larger. ```r paste("How many patches of fabric do you need to make the quilt?")```

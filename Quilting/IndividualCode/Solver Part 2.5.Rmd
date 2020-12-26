@@ -322,16 +322,25 @@ for (i in 1:7) {
 rowCount <- nrow(df) - 2
 colCount <- ncol(df) - 2
 
-df <- data.frame(matrix(NA, nrow=(rowCount + 2), ncol=(colCount + 2)))
+df <-
+  data.frame(matrix(NA, nrow = (rowCount + 2), ncol = (colCount + 2)))
 
-df[c(1,nrow(df)),] <- "x"
-df[,c(1,ncol(df))] <- "x"
+df[c(1, nrow(df)), ] <- "x"
+df[, c(1, ncol(df))] <- "x"
 
 colors <- c("r", "o", "y", "g", "b", "i", "v")
-squaresRemaining <- c(length(colorSize[[1]]), length(colorSize[[2]]), length(colorSize[[3]]), length(colorSize[[4]]), length(colorSize[[5]]),
-                      length(colorSize[[6]]), length(colorSize[[7]]))
+squaresRemaining <-
+  c(
+    length(colorSize[[1]]),
+    length(colorSize[[2]]),
+    length(colorSize[[3]]),
+    length(colorSize[[4]]),
+    length(colorSize[[5]]),
+    length(colorSize[[6]]),
+    length(colorSize[[7]])
+  )
 
-maxSize <- floor(sqrt(ncol(df) - 1))
+#maxSize <- floor(sqrt(ncol(df) - 1))
 fullFlag <- FALSE
 
 sameCounter <- 0
@@ -340,52 +349,32 @@ sameCheck <- squaresRemaining
 rowFlip <- TRUE
 colorNum <- 1
 
-while(!fullFlag) {
-  if(rowFlip) {
-    rowSeq <- 2:(nrow(df)-1)
-    colSeq <- 2:(ncol(df)-1)
+while (!fullFlag) {
+  if (rowFlip) {
+    rowSeq <- 2:(nrow(df) - 1)
+    colSeq <- 2:(ncol(df) - 1)
     rowFlip <- FALSE
   }
   else {
-    rowSeq <- (nrow(df)-1):2
-    colSeq <- (ncol(df)-1):2
+    rowSeq <- (nrow(df) - 1):2
+    colSeq <- (ncol(df) - 1):2
     rowFlip <- TRUE
   }
-  for(r in rowSeq) {
-    for(c in colSeq) {
-      
-      if(is.na(df[r,c])) {
-      validFlag <- FALSE
-      
-      # colorNum <- floor(runif(1, min = 1, max = length(colors) + 1))
-      # color <- colors[colorNum]
-      # match(numberDF[r,c], colorSize[[colorNum]])
-      
-      colorNum <- floor(runif(1, min = 1, max = length(colors) + 1))
-      while(TRUE) {
-        colorNum <- floor(runif(1, min = 1, max = length(colors) + 1))
-        color <- colors[colorNum]
-        numSpot <- match(numberDF[r,c], colorSize[[colorNum]])
-        boxSize <- colorSize[[colorNum]][numSpot]
-        colorSize[[colorNum]] <- colorSize[[colorNum]][-numSpot]
-        if(!is.na(match(numberDF[r,c], colorSize[[colorNum]])) & !is.na(colorSize[[colorNum]] | is.na(colorSize[[colorNum]])))
-          break
-      }
-      
-      # color <- colors[colorNum]
-      # numSpot <- match(numberDF[r,c], colorSize[[colorNum]])
-      # boxSize <- colorSize[[colorNum]][numSpot]
-      # colorSize[[colorNum]] <- colorSize[[colorNum]][-numSpot]
-      #  
-      # if(colorNum == 7)
-      #  colorNum <- 1
-      # else
-      #  colorNum <- colorNum + 1
+  for (r in rowSeq) {
+    for (c in colSeq) {
+      if (is.na(df[r, c])) {
+        boxSize <- as.numeric(numberDF[r, c])
+        while (TRUE) {
+          colorNum <- floor(runif(1, min = 1, max = length(colors) + 1))
+          color <- colors[colorNum]
+          numSpot <- match(boxSize, colorSize[[colorNum]])
+          numSpot <- numSpot[1]
+          if (!is.na(numSpot) & squaresRemaining[[colorNum]] != 0)
+            break
+        }
         
-      leftovers[1] <- squaresRemaining[[colorNum]] - 1
-      
-      #if((r + boxSize) <= (nrow(df) - 1) & (c + boxSize) <= (ncol(df) - 1)) {
-      if((r + boxSize) <= (nrow(df) - 1) & (c + boxSize) <= (ncol(df) - 1) & as.numeric(leftovers[1]) >= 0) {
+        boxSize <- boxSize - 1
+      if((r + boxSize) <= (nrow(df) - 1) & (c + boxSize) <= (ncol(df) - 1) & squaresRemaining[[colorNum]] > 0) {
         
         temp <- as.data.frame(df[(r-1):(r+boxSize+1), (c-1):(c+boxSize+1)])
         temp[2:(nrow(temp)-1),2:(ncol(temp)-1)] <- NA
@@ -397,31 +386,174 @@ while(!fullFlag) {
         
         if(!(FALSE %in% is.na(as.data.frame(df[r:(r+boxSize), c:(c+boxSize)]))) & !is.element(color, unlist(temp))) {
             validFlag <- TRUE
-            squaresRemaining[[colorNum]] <- leftovers[1]
+            squaresRemaining[colorNum] <- squaresRemaining[[colorNum]] - 1
             df[r:(r+boxSize), c:(c+boxSize)] <- color
         }
       }
         
-      #if(!is.na(squaresRemaining[colorNum]) & squaresRemaining[[colorNum]] <= (.75 * rowCount * colCount)) {
-        #colors <- colors[-colorNum]
-        #squaresRemaining <- squaresRemaining[-colorNum]
-      #}
-      
       }
       
     }
   }
   
-  if(!(TRUE %in% is.na(df)))
+  if (!(TRUE %in% is.na(df)))
     fullFlag <- TRUE
   
-  if(sameCheck == squaresRemaining)
+  if (!(FALSE %in% (sameCheck == squaresRemaining)))
     sameCounter <- sameCounter + 1
   else {
     sameCheck <- squaresRemaining
     sameCounter <- 0
   }
+  
+  if (sameCounter > 25) {
+    df <-
+      data.frame(matrix(
+        NA,
+        nrow = (rowCount + 2),
+        ncol = (colCount + 2)
+      ))
+    
+    df[c(1, nrow(df)), ] <- "x"
+    df[, c(1, ncol(df))] <- "x"
+    
+    colors <- c("r", "o", "y", "g", "b", "i", "v")
+    squaresRemaining <-
+      c(
+        length(colorSize[[1]]),
+        length(colorSize[[2]]),
+        length(colorSize[[3]]),
+        length(colorSize[[4]]),
+        length(colorSize[[5]]),
+        length(colorSize[[6]]),
+        length(colorSize[[7]])
+      )
+    
+    #maxSize <- floor(sqrt(ncol(df) - 1))
+    fullFlag <- FALSE
+    
+    sameCounter <- 0
+    sameCheck <- squaresRemaining
+    
+    rowFlip <- TRUE
+    colorNum <- 1
+  }
+  
+}
+```
 
+
+```{r}
+rowCount <- nrow(df) - 2
+colCount <- ncol(df) - 2
+
+df <-
+  data.frame(matrix(NA, nrow = (rowCount + 2), ncol = (colCount + 2)))
+
+df[c(1, nrow(df)), ] <- "x"
+df[, c(1, ncol(df))] <- "x"
+
+colors <- c("r", "o", "y", "g", "b", "i", "v")
+squaresRemaining <-
+  c(
+    length(colorSize[[1]]),
+    length(colorSize[[2]]),
+    length(colorSize[[3]]),
+    length(colorSize[[4]]),
+    length(colorSize[[5]]),
+    length(colorSize[[6]]),
+    length(colorSize[[7]])
+  )
+
+#maxSize <- floor(sqrt(ncol(df) - 1))
+fullFlag <- FALSE
+
+sameCounter <- 0
+sameCheck <- squaresRemaining
+
+rowFlip <- TRUE
+colorNum <- 1
+
+while (!fullFlag) {
+  if (rowFlip) {
+    rowSeq <- 2:(nrow(df) - 1)
+    colSeq <- 2:(ncol(df) - 1)
+    rowFlip <- FALSE
+  }
+  else {
+    rowSeq <- (nrow(df) - 1):2
+    colSeq <- (ncol(df) - 1):2
+    rowFlip <- TRUE
+  }
+  for (r in rowSeq) {
+    for (c in colSeq) {
+
+      if (is.na(df[r, c])) {
+        validFlag <- FALSE
+        
+        # colorNum <- floor(runif(1, min = 1, max = length(colors) + 1))
+        # color <- colors[colorNum]
+        # match(numberDF[r,c], colorSize[[colorNum]])
+        
+        while (TRUE) {
+          colorNum <- floor(runif(1, min = 1, max = length(colors) + 1))
+          color <- colors[colorNum]
+          numSpot[1] <- match(numberDF[r, c], colorSize[[colorNum]])
+          boxSize <- colorSize[[colorNum]][numSpot[1]]
+          if (!is.na(numSpot[1]) & squaresRemaining[[colorNum]] != 0)
+            break
+        }
+        colorSize[[colorNum]] <- colorSize[[colorNum]][-numSpot[1]]
+        
+        # color <- colors[colorNum]
+        # numSpot <- match(numberDF[r,c], colorSize[[colorNum]])
+        # boxSize <- colorSize[[colorNum]][numSpot]
+        # colorSize[[colorNum]] <- colorSize[[colorNum]][-numSpot]
+        #
+        # if(colorNum == 7)
+        #  colorNum <- 1
+        # else
+        #  colorNum <- colorNum + 1
+        
+        #leftovers <- squaresRemaining[[colorNum]] - 1
+        
+        if ((r + boxSize) <= (nrow(df) - 1) & (c + boxSize) <= (ncol(df) - 1) & squaresRemaining[[colorNum]] > 0) {
+          temp <- as.data.frame(df[(r - 1):(r + boxSize), (c - 1):(c + boxSize)])
+          temp[2:(nrow(temp) - 1), 2:(ncol(temp) - 1)] <- NA
+          temp[temp == "x"] <- NA
+          if (nrow(temp) == 1)
+            temp[1, 1] <- NA
+          else
+            temp[c(1, nrow(temp)), c(1, ncol(temp))] <- NA
+          
+          if (!(FALSE %in% is.na(as.data.frame(df[r:(r + boxSize - 1), c:(c + boxSize - 1)]))) & !is.element(color, unlist(temp))) {
+            validFlag <- TRUE
+            squaresRemaining[[colorNum]] <-
+              squaresRemaining[[colorNum]] - 1
+            df[r:(r + boxSize - 1), c:(c + boxSize - 1)] <- color
+          }
+        }
+        
+        # if (!is.na(squaresRemaining[colorNum]) & squaresRemaining[[colorNum]] == 0) {
+        #   colors <- colors[-colorNum]
+        #   squaresRemaining <- squaresRemaining[-colorNum]
+        # }
+        
+      }
+      
+    }
+  }
+  
+  if (!(TRUE %in% is.na(df)))
+    fullFlag <- TRUE
+  
+  if (!(FALSE %in% (sameCheck == squaresRemaining)))
+    sameCounter <- sameCounter + 1
+  else {
+    sameCheck <- squaresRemaining
+    sameCounter <- 0
+  }
+  
 }
 ```
 

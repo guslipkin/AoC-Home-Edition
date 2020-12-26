@@ -13,8 +13,8 @@ library(readxl)
 # Part 1
 ## Generator
 ```{r, warning=FALSE}
-rowCount <- 62
-colCount <- 32
+rowCount <- 125
+colCount <- 64
 
 df <- data.frame(matrix(NA, nrow=(rowCount + 2), ncol=(colCount + 2)))
 

@@ -1,0 +1,1031 @@
+Trout 31.305 5.176
+Mackerel 26.926 1.308
+Yellowfin Tuna 17.493 2.601
+Mackerel 23.409 1.222
+Red Snapper 25.08 3.062
+Sea Bass 27.203 1.272
+Halibut 19.235 0.487
+Whitesaddle Goatfish 38.118 4.634
+Whitesaddle Goatfish 35.014 1.542
+Yellowfin Tuna 20.396 2.944
+Salmon 37.643 5.009
+Whitesaddle Goatfish 13.342 3.368
+Yellowfin Tuna 42.72 4.354
+Whitesaddle Goatfish 44.045 4.758
+Perch 27.019 4.032
+Sea Bass 19.105 1.466
+Trout 34.132 4.624
+Sea Bass 17.889 2.678
+Salmon 15.033 3.075
+Whitesaddle Goatfish 40.05 4.762
+Sea Bass 37.363 1.842
+Red Snapper 0 3.142
+Perch 45.277 4.602
+Salmon 26.249 4.008
+Whitesaddle Goatfish 16.553 5.149
+Mackerel 8.485 3.927
+Halibut 31.78 4.49
+Walleye 28.284 3.927
+Yellowfin Tuna 31.048 4.973
+Walleye 9.434 5.725
+Mackerel 38.484 2
+Yellowfin Tuna 31.78 1.149
+Mackerel 34.409 4.092
+Walleye 14.318 4.923
+Mackerel 34 4.712
+Walleye 26.173 5.471
+Salmon 20.881 3.433
+Red Snapper 15.033 1.504
+Perch 16.279 0.185
+Perch 31.401 1.411
+Red Snapper 36.139 4.461
+Halibut 18.439 5.575
+Sea Bass 26.019 4.751
+Sea Bass 26.833 2.678
+Halibut 36.346 1.433
+Sea Bass 24.698 1.198
+Red Snapper 44.011 1.548
+Halibut 16.155 5.903
+Red Snapper 24.083 4.629
+Whitesaddle Goatfish 37 4.712
+Red Snapper 14.765 0.494
+Halibut 27.074 1.497
+Whitesaddle Goatfish 40.608 1.398
+Whitesaddle Goatfish 9.22 2.433
+Sea Bass 27.586 2.382
+Yellowfin Tuna 17.464 4.943
+Salmon 34.015 1.6
+Salmon 18.028 3.086
+Walleye 21.954 5.758
+Salmon 35.847 1.17
+Yellowfin Tuna 43 1.571
+Mackerel 26.401 2.001
+Walleye 21.932 0.818
+Salmon 11.045 6.193
+Red Snapper 32.28 1.288
+Whitesaddle Goatfish 46.53 1.722
+Yellowfin Tuna 24.083 2.297
+Yellowfin Tuna 20.248 5.065
+Walleye 23.707 1.088
+Red Snapper 45.011 1.549
+Sea Bass 25.942 5.802
+Salmon 12.166 1.406
+Perch 31.113 3.927
+Trout 34.176 1.212
+Salmon 43.738 4.896
+Mackerel 33.377 1.42
+Trout 25.318 2.983
+Red Snapper 10 4.712
+Trout 16.643 5.712
+Trout 23.601 3.777
+Halibut 33.015 2.184
+Mackerel 26.306 4.56
+Yellowfin Tuna 22.091 0.091
+Trout 16.763 2.839
+Walleye 25.495 0.73
+Red Snapper 8.602 0.951
+Whitesaddle Goatfish 31.241 0.876
+Trout 19.925 4.407
+Red Snapper 50 1.571
+Perch 44.011 1.594
+Salmon 26.42 5.769
+Red Snapper 19.647 6.026
+Perch 13.601 0.298
+Whitesaddle Goatfish 35.468 5.088
+Salmon 23.431 4.018
+Trout 34.176 1.93
+Whitesaddle Goatfish 44.911 4.914
+Trout 24.698 1.016
+Salmon 10.296 4.205
+Walleye 42 1.571
+Whitesaddle Goatfish 20.025 6.233
+Walleye 30.61 2.24
+Halibut 29.155 4.172
+Mackerel 24.839 2.271
+Walleye 21.19 2.805
+Perch 20.616 3.54
+Trout 24.597 1.107
+Perch 31.257 1.442
+Mackerel 42.202 1.332
+Sea Bass 42.154 1.181
+Yellowfin Tuna 33.734 1.362
+Perch 14.866 3.975
+Red Snapper 21.213 5.498
+Mackerel 34.986 4.172
+Red Snapper 46.325 1.811
+Perch 8.062 4.193
+Yellowfin Tuna 24.759 3.898
+Walleye 14.036 6.212
+Halibut 16.492 0.245
+Red Snapper 18.028 1.626
+Whitesaddle Goatfish 23.259 4.268
+Trout 22.561 1.347
+Perch 40.608 4.886
+Sea Bass 13.892 4.184
+Yellowfin Tuna 12.166 3.307
+Sea Bass 14.318 0.211
+Yellowfin Tuna 27.785 5.755
+Yellowfin Tuna 27.203 5.341
+Sea Bass 23.022 0.971
+Mackerel 37.59 4.213
+Trout 21.213 3.927
+Yellowfin Tuna 7.81 5.588
+Trout 40.853 5.088
+Walleye 21.095 0.095
+Whitesaddle Goatfish 27.459 5.29
+Walleye 9.849 2.723
+Yellowfin Tuna 36.674 1.119
+Red Snapper 31.048 4.452
+Red Snapper 44.102 4.78
+Mackerel 25 0.644
+Halibut 32.249 4.193
+Perch 23.324 0.54
+Walleye 41.773 1.763
+Red Snapper 26.907 5.445
+Perch 45.607 4.446
+Sea Bass 45.354 4.957
+Walleye 2.236 4.249
+Sea Bass 18.601 2.509
+Walleye 33.061 4.652
+Yellowfin Tuna 30.232 2.168
+Trout 42.72 4.428
+Perch 25.962 4.985
+Whitesaddle Goatfish 43.174 1.337
+Perch 19.105 6.178
+Mackerel 34.409 5.333
+Trout 20.809 0.956
+Halibut 37.643 4.416
+Perch 34.482 5.007
+Trout 39.812 4.51
+Perch 31.241 4.018
+Sea Bass 25.612 2.246
+Salmon 15.811 4.391
+Perch 39.205 1.469
+Salmon 16.492 2.897
+Halibut 17.029 1.512
+Mackerel 21.095 1.022
+Sea Bass 14.318 3.353
+Sea Bass 12.166 4.878
+Perch 20.1 4.613
+Perch 29.411 2.187
+Whitesaddle Goatfish 40.719 5.143
+Whitesaddle Goatfish 14.318 1.782
+Walleye 25.554 2.608
+Sea Bass 25.612 4.038
+Walleye 23.707 0.483
+Halibut 40.311 5.121
+Yellowfin Tuna 22.204 0.945
+Yellowfin Tuna 20.248 2.145
+Perch 16.155 2.761
+Perch 23.431 5.407
+Perch 12.042 0.083
+Walleye 39 4.318
+Halibut 33.838 1.902
+Red Snapper 28.844 5.3
+Walleye 46.174 1.484
+Trout 23.259 0.444
+Mackerel 21.401 2.224
+Sea Bass 34.132 4.8
+Red Snapper 18.028 1.232
+Sea Bass 21.095 2.119
+Walleye 47.265 4.818
+Whitesaddle Goatfish 28.636 4.501
+Walleye 11.314 3.927
+Mackerel 37.577 1.131
+Mackerel 32.696 1.162
+Halibut 21.471 2.055
+Mackerel 35.777 1.107
+Trout 33.121 1.067
+Halibut 39.459 1.418
+Salmon 34.482 1.865
+Sea Bass 33.302 0.849
+Sea Bass 41.976 4.928
+Trout 26.077 0.567
+Yellowfin Tuna 33.541 4.892
+Perch 42.19 1.666
+Perch 34.438 2.021
+Sea Bass 32.202 4.263
+Perch 32.573 5.024
+Halibut 39.925 4.327
+Halibut 23.022 5.683
+Sea Bass 14.56 2.863
+Sea Bass 18.028 5.3
+Sea Bass 28.862 1.816
+Whitesaddle Goatfish 23.409 2.793
+Trout 34.132 2.126
+Perch 29.155 4.609
+Yellowfin Tuna 14.765 4.218
+Red Snapper 18.682 2.871
+Whitesaddle Goatfish 21.024 4.27
+Halibut 25.942 1.09
+Walleye 11.18 0.18
+Trout 9.055 4.823
+Walleye 23.022 4.756
+Mackerel 9.487 4.391
+Yellowfin Tuna 6.708 5.176
+Sea Bass 35.468 4.337
+Trout 21.378 1.383
+Sea Bass 38.013 2.034
+Halibut 17.029 5.415
+Yellowfin Tuna 22.825 5.78
+Sea Bass 41.11 5.034
+Halibut 21.541 3.522
+Walleye 15 5.356
+Yellowfin Tuna 37.216 1.035
+Walleye 33.015 1.601
+Walleye 48.374 1.446
+Perch 5.099 3.339
+Red Snapper 24.187 0.519
+Red Snapper 47.011 4.734
+Trout 5.099 1.768
+Perch 5 4.069
+Halibut 42.202 4.473
+Red Snapper 15.297 1.768
+Halibut 26.306 1.723
+Sea Bass 6.083 2.976
+Salmon 14.213 2.257
+Whitesaddle Goatfish 42.426 1.713
+Halibut 25.632 2.783
+Trout 38.833 4.505
+Sea Bass 44.272 4.391
+Mackerel 49.01 4.692
+Trout 5.831 4.172
+Salmon 31.305 2.034
+Sea Bass 17.263 6.109
+Mackerel 29.069 4
+Walleye 28.601 3.778
+Salmon 45 1.571
+Mackerel 44.102 4.644
+Mackerel 17.029 0.059
+Trout 18.788 2.011
+Trout 19.799 2.356
+Halibut 10.44 4.421
+Walleye 34.886 2.047
+Red Snapper 11.662 4.172
+Sea Bass 40.447 4.563
+Trout 25.495 4.515
+Yellowfin Tuna 23.854 0.576
+Yellowfin Tuna 31.953 5.064
+Halibut 32.65 1.093
+Red Snapper 39.319 1.443
+Trout 17.205 0.951
+Red Snapper 17.029 4.771
+Sea Bass 41.761 4.421
+Mackerel 32.65 5.411
+Walleye 33.526 1.874
+Salmon 7.071 4.57
+Halibut 22.825 1.068
+Whitesaddle Goatfish 33.242 1.691
+Walleye 49.01 1.55
+Salmon 25.612 2.467
+Trout 10.77 4.332
+Trout 34.234 1.454
+Yellowfin Tuna 23.195 1.441
+Perch 25.318 6.125
+Trout 16.763 5.98
+Salmon 21.024 5.841
+Perch 12.042 5.557
+Mackerel 23 4.712
+Whitesaddle Goatfish 23.77 5.895
+Yellowfin Tuna 27.514 4.379
+Trout 31.064 4.777
+Whitesaddle Goatfish 17.804 4.046
+Sea Bass 21.471 0.484
+Mackerel 18.358 4.2
+Walleye 23.324 1.03
+Walleye 26.173 1.456
+Perch 32.202 5.343
+Halibut 13.928 0.367
+Red Snapper 15.232 4.307
+Halibut 21.378 4.901
+Mackerel 41.195 4.81
+Salmon 45.607 1.305
+Sea Bass 7.81 0.876
+Trout 31.385 1.036
+Sea Bass 10.817 4.124
+Halibut 48.26 1.467
+Salmon 22.472 0.364
+Mackerel 21.095 0.549
+Halibut 14.213 3.827
+Halibut 21.213 0.785
+Sea Bass 4.243 3.927
+Walleye 10.63 5.564
+Trout 38.328 1.44
+Sea Bass 50.04 1.531
+Perch 13.153 1.418
+Whitesaddle Goatfish 18.358 0.512
+Halibut 29.411 4.401
+Walleye 22.204 4.577
+Trout 12.083 2.715
+Mackerel 44.922 4.419
+Whitesaddle Goatfish 22.804 4.446
+Mackerel 17.117 4.829
+Yellowfin Tuna 21.932 1.994
+Whitesaddle Goatfish 11.18 6.103
+Yellowfin Tuna 30 5.356
+Red Snapper 35.128 4.798
+Sea Bass 3.606 0.588
+Walleye 28.284 1.713
+Yellowfin Tuna 3.162 1.249
+Whitesaddle Goatfish 24.021 3.183
+Red Snapper 29.017 4.747
+Red Snapper 17.692 5.538
+Walleye 9.22 5.421
+Perch 49.041 4.753
+Salmon 46.098 4.778
+Salmon 17.117 1.688
+Yellowfin Tuna 15.62 3.836
+Salmon 25.612 3.816
+Yellowfin Tuna 20.881 5.004
+Trout 15 3.142
+Halibut 20.591 2.078
+Halibut 36.892 2.144
+Mackerel 22.023 3.187
+Walleye 28.16 5
+Sea Bass 30.806 4.483
+Yellowfin Tuna 47.854 1.76
+Sea Bass 22.825 5.215
+Walleye 19.105 3.246
+Halibut 14.422 2.159
+Trout 37 4.382
+Halibut 13.153 4.56
+Halibut 37.855 4.499
+Trout 9.22 3.36
+Trout 14.036 4.641
+Whitesaddle Goatfish 28.018 4.748
+Sea Bass 38.013 1.544
+Whitesaddle Goatfish 35.468 1.946
+Whitesaddle Goatfish 25 4.429
+Yellowfin Tuna 26.173 0.758
+Sea Bass 28.32 0.835
+Perch 8.246 4.957
+Red Snapper 32.062 4.775
+Perch 33.121 4.208
+Halibut 39.051 4.945
+Mackerel 24.413 0.611
+Whitesaddle Goatfish 37.121 4.793
+Sea Bass 44.181 1.661
+Trout 13.454 5.55
+Halibut 38.053 4.765
+Trout 22.847 1.166
+Trout 28.46 1.249
+Whitesaddle Goatfish 23.259 5.157
+Trout 18.868 2.129
+Trout 43.324 1.242
+Trout 42.107 4.784
+Red Snapper 28.844 0.588
+Halibut 14.213 2.456
+Sea Bass 21.213 3
+Walleye 15.652 5.176
+Trout 32.573 4.4
+Salmon 13.416 4.249
+Mackerel 24.698 3.696
+Perch 4.123 1.816
+Salmon 45.891 1.768
+Whitesaddle Goatfish 40.522 4.987
+Whitesaddle Goatfish 34.525 1.396
+Red Snapper 47 1.571
+Trout 22.561 6.06
+Halibut 14.866 4.369
+Salmon 31.145 0.831
+Sea Bass 26.87 0.785
+Perch 33.121 2.075
+Perch 13.416 5.82
+Red Snapper 19 4.712
+Salmon 25.495 5.442
+Mackerel 5.657 5.498
+Sea Bass 38.601 1.86
+Yellowfin Tuna 34.482 5.228
+Halibut 12.042 3.058
+Trout 26.926 1.19
+Whitesaddle Goatfish 21.095 2.593
+Salmon 43.012 1.878
+Salmon 37.216 4.177
+Mackerel 26.249 1.88
+Halibut 25.06 5.784
+Trout 13 4.712
+Trout 12.083 5.857
+Halibut 32.696 1.98
+Yellowfin Tuna 16.125 3.661
+Walleye 39.013 4.687
+Salmon 27.785 2.614
+Salmon 14.56 0.278
+Walleye 15.811 1.893
+Mackerel 18.028 4.124
+Perch 20.125 5.82
+Trout 9.434 5.271
+Salmon 26.249 3.846
+Red Snapper 45.541 4.867
+Trout 34.482 2.086
+Trout 30.414 5.191
+Whitesaddle Goatfish 19.799 3.927
+Sea Bass 16.643 2.57
+Red Snapper 13 2.747
+Mackerel 23.431 0.876
+Mackerel 18.439 0.219
+Salmon 24.187 4.193
+Yellowfin Tuna 36.056 1.91
+Walleye 41 4.712
+Salmon 8.062 1.695
+Yellowfin Tuna 12.166 0.165
+Mackerel 29 2.381
+Trout 24.739 0.245
+Red Snapper 37.696 1.951
+Walleye 50.09 4.652
+Yellowfin Tuna 18.385 5.103
+Whitesaddle Goatfish 10.63 2.423
+Mackerel 34.986 5.253
+Sea Bass 40.311 1.979
+Sea Bass 15.811 3.747
+Perch 16.279 3.884
+Trout 22.847 2.737
+Red Snapper 43.417 4.851
+Perch 26.249 4.403
+Red Snapper 5 2.498
+Salmon 7.616 5.117
+Sea Bass 17.205 5.333
+Walleye 21.26 5.431
+Red Snapper 19.647 3.399
+Sea Bass 27.659 3.85
+Halibut 18.385 3.532
+Red Snapper 19.849 0.714
+Halibut 21.587 6.049
+Halibut 32.016 4.965
+Mackerel 21.26 2.423
+Walleye 25.632 1.93
+Perch 19.849 3.998
+Red Snapper 24.515 4.918
+Trout 47.17 4.797
+Trout 39.459 4.56
+Sea Bass 40.012 1.546
+Whitesaddle Goatfish 36.014 4.685
+Yellowfin Tuna 40.262 1.822
+Red Snapper 26.249 5.022
+Red Snapper 26.926 1.834
+Salmon 47.265 1.677
+Perch 37.483 1.732
+Yellowfin Tuna 11.662 1.03
+Halibut 7 6.283
+Salmon 17 1.081
+Salmon 14.213 5.398
+Sea Bass 27.295 4.565
+Perch 15.133 1.438
+Yellowfin Tuna 26.249 5.579
+Sea Bass 47.381 1.444
+Whitesaddle Goatfish 29.411 4.096
+Salmon 16.155 1.19
+Perch 40.112 1.496
+Sea Bass 21.26 3.86
+Yellowfin Tuna 36.359 1.021
+Whitesaddle Goatfish 24.597 4.249
+Mackerel 11.402 3.408
+Trout 28.32 2.306
+Sea Bass 10.44 2.85
+Mackerel 40.792 4.515
+Yellowfin Tuna 17 2.652
+Sea Bass 46.69 4.54
+Trout 24.166 0.427
+Trout 34.67 5.292
+Salmon 15.133 6.151
+Red Snapper 10.296 1.064
+Red Snapper 27.459 4.529
+Halibut 41.593 1.74
+Halibut 19.026 3.194
+Yellowfin Tuna 24.187 4.588
+Red Snapper 17.029 1.63
+Mackerel 25.632 3.5
+Trout 34.205 1.837
+Mackerel 46.043 4.669
+Perch 32.202 1.121
+Yellowfin Tuna 14.56 1.849
+Halibut 23.087 5.975
+Halibut 19.416 2.173
+Mackerel 11.402 5.622
+Yellowfin Tuna 22.204 4.087
+Yellowfin Tuna 26.249 5.417
+Mackerel 36.878 1.352
+Perch 15.62 5.407
+Perch 10 3.142
+Walleye 12.207 3.752
+Salmon 26.926 5.736
+Mackerel 24.207 4.044
+Mackerel 10.817 2.159
+Salmon 24.083 0.727
+Halibut 33.377 4.863
+Mackerel 19.416 3.744
+Mackerel 17.205 3.762
+Whitesaddle Goatfish 20.616 2.459
+Red Snapper 39.051 4.48
+Whitesaddle Goatfish 36.249 4.286
+Halibut 37.696 5.093
+Halibut 19.416 5.681
+Halibut 46.325 4.952
+Yellowfin Tuna 27.803 0.913
+Sea Bass 18.601 2.204
+Perch 33.601 2.208
+Yellowfin Tuna 14.318 4.501
+Yellowfin Tuna 21.587 1.805
+Whitesaddle Goatfish 44.011 4.69
+Sea Bass 20 1.571
+Sea Bass 40.447 4.861
+Whitesaddle Goatfish 24.839 5.583
+Yellowfin Tuna 18.601 4.08
+Perch 17.088 3.5
+Perch 19.313 3.512
+Halibut 13.454 3.874
+Red Snapper 38.897 4.399
+Salmon 20.616 0.399
+Mackerel 34.409 2.191
+Halibut 42.154 5.102
+Perch 19.416 2.934
+Salmon 43.932 1.364
+Red Snapper 41 4.934
+Sea Bass 16.279 4.898
+Mackerel 7.211 3.73
+Trout 23.601 0.635
+Yellowfin Tuna 18.788 5.843
+Perch 20.248 5.709
+Perch 27.459 1.754
+Sea Bass 20.518 0.82
+Red Snapper 18.028 4.373
+Yellowfin Tuna 42.012 1.595
+Red Snapper 30.265 1.438
+Halibut 23.77 4.324
+Mackerel 12.042 1.488
+Halibut 22.361 0.18
+Halibut 18.868 3.7
+Sea Bass 23.345 1.743
+Whitesaddle Goatfish 25.942 3.622
+Walleye 36.359 2.121
+Halibut 12.369 1.326
+Mackerel 13.601 4.084
+Red Snapper 14.318 2.709
+Salmon 27.019 4.749
+Sea Bass 21.954 0.525
+Red Snapper 16.279 0.742
+Walleye 24.331 1.406
+Perch 13.038 2.575
+Salmon 30.414 1.406
+Walleye 19.026 6.231
+Sea Bass 27.785 3.67
+Halibut 8.944 1.107
+Sea Bass 22.204 4.848
+Whitesaddle Goatfish 21.378 4.524
+Walleye 40.05 1.521
+Red Snapper 42.72 1.286
+Halibut 27.893 1.317
+Mackerel 46.098 1.789
+Halibut 20.025 0.05
+Walleye 19.235 6.127
+Salmon 33.015 4.743
+Trout 27.659 5.575
+Perch 11.402 4.979
+Walleye 29.069 3.854
+Red Snapper 47.676 1.402
+Whitesaddle Goatfish 21.378 3.33
+Mackerel 11.402 0.91
+Red Snapper 37.336 1.926
+Mackerel 45.398 1.438
+Perch 14.765 5.206
+Sea Bass 24.331 2.976
+Yellowfin Tuna 21.587 3.375
+Whitesaddle Goatfish 32.573 1.259
+Perch 30.15 1.471
+Trout 46.011 1.593
+Salmon 27.586 0.811
+Sea Bass 15.033 3.208
+Salmon 13 5.888
+Salmon 36.014 1.599
+Red Snapper 11.045 0.091
+Halibut 12.649 5.961
+Sea Bass 24.739 1.326
+Perch 24.413 5.672
+Mackerel 45.011 4.735
+Salmon 19.416 4.92
+Mackerel 32.249 2.09
+Trout 2.828 3.927
+Yellowfin Tuna 29.614 4.916
+Whitesaddle Goatfish 35.847 5.114
+Halibut 8.062 1.446
+Mackerel 42.048 4.665
+Yellowfin Tuna 6.325 1.249
+Sea Bass 34.176 5.071
+Whitesaddle Goatfish 31.321 4.421
+Trout 40.012 1.596
+Walleye 22.023 4.758
+Perch 23.707 2.659
+Halibut 26.907 5.55
+Perch 29.155 5.253
+Trout 10.198 4.515
+Yellowfin Tuna 21.26 2.29
+Trout 10 4.069
+Walleye 29.411 5.329
+Red Snapper 8.485 2.356
+Yellowfin Tuna 23.854 5.289
+Walleye 24.597 2.034
+Yellowfin Tuna 29 3.903
+Red Snapper 17.263 0.175
+Sea Bass 20.809 5.327
+Sea Bass 33.838 1.24
+Whitesaddle Goatfish 35.511 1.006
+Halibut 34.366 1.717
+Walleye 14.213 4.027
+Halibut 21.401 5.365
+Walleye 37.656 1.384
+Mackerel 23.537 2.928
+Perch 21.024 6.236
+Yellowfin Tuna 35.341 4.274
+Mackerel 17.72 4.998
+Yellowfin Tuna 19.925 1.877
+Halibut 27.659 0.862
+Red Snapper 37 1.571
+Whitesaddle Goatfish 13 1.571
+Halibut 28.46 1.893
+Yellowfin Tuna 39.925 5.098
+Salmon 14.866 2.799
+Salmon 12.166 2.976
+Yellowfin Tuna 40.804 1.272
+Trout 12.53 5.212
+Mackerel 25.08 1.651
+Trout 44.272 1.249
+Salmon 26.173 4.598
+Salmon 38.053 4.66
+Trout 21.213 1.429
+Mackerel 20.809 3.756
+Salmon 8.062 2.622
+Red Snapper 17 4.712
+Sea Bass 19.209 3.816
+Perch 47.854 4.902
+Halibut 29.411 5.667
+Walleye 34.67 0.991
+Red Snapper 28.844 3.73
+Whitesaddle Goatfish 34.785 4.391
+Mackerel 12 6.283
+Yellowfin Tuna 26.926 2.118
+Red Snapper 39.319 4.585
+Yellowfin Tuna 47.676 4.881
+Halibut 37.216 2.107
+Halibut 12.728 5.498
+Yellowfin Tuna 49.163 1.489
+Salmon 19.849 2.285
+Yellowfin Tuna 12.207 4.102
+Halibut 23.77 3.53
+Walleye 47.17 1.486
+Yellowfin Tuna 22.472 2.578
+Perch 43.417 1.432
+Red Snapper 25.962 2.869
+Yellowfin Tuna 13.416 2.034
+Mackerel 21.19 4.376
+Salmon 20.518 0.751
+Whitesaddle Goatfish 32.062 1.633
+Mackerel 37.336 4.578
+Trout 35.128 4.627
+Yellowfin Tuna 49.092 1.632
+Whitesaddle Goatfish 16.125 2.09
+Halibut 47.011 1.55
+Walleye 27.295 4.859
+Halibut 49.092 4.774
+Whitesaddle Goatfish 48.166 1.488
+Mackerel 39.205 4.61
+Yellowfin Tuna 15.811 2.82
+Mackerel 35.228 0.967
+Halibut 5 2.214
+Red Snapper 8.246 1.326
+Perch 24.698 2.125
+Red Snapper 46.872 4.906
+Salmon 3 1.571
+Red Snapper 11.402 1.305
+Trout 35.511 4.148
+Halibut 43.324 4.383
+Sea Bass 17.263 4.887
+Perch 29.069 5.176
+Whitesaddle Goatfish 20.1 1.67
+Trout 48.26 4.609
+Yellowfin Tuna 21.19 5.049
+Walleye 31.113 2.356
+Halibut 38.275 5.059
+Whitesaddle Goatfish 40.522 1.296
+Red Snapper 47.676 1.739
+Whitesaddle Goatfish 32.016 4.681
+Yellowfin Tuna 25.02 4.752
+Red Snapper 11.045 4.803
+Mackerel 20.881 0.291
+Yellowfin Tuna 8.246 2.897
+Walleye 10.05 1.67
+Yellowfin Tuna 35.735 4.399
+Walleye 15 4.069
+Salmon 25.71 2.906
+Red Snapper 49 1.571
+Yellowfin Tuna 22.804 0.661
+Red Snapper 41.785 4.345
+Whitesaddle Goatfish 41 1.349
+Salmon 25.08 0.41
+Mackerel 24.187 6.159
+Trout 11.705 2.793
+Halibut 43.046 4.666
+Whitesaddle Goatfish 32.016 1.54
+Red Snapper 4.472 2.678
+Yellowfin Tuna 12.806 0.675
+Whitesaddle Goatfish 23.087 1.879
+Sea Bass 16.125 0.519
+Sea Bass 36.249 1.144
+Walleye 42.755 4.524
+Halibut 5.657 3.927
+Yellowfin Tuna 12.369 4.467
+Sea Bass 25.298 5.034
+Halibut 21 1.571
+Red Snapper 38.484 1.142
+Salmon 31.113 0.785
+Halibut 5.385 2.761
+Red Snapper 24.698 0.554
+Mackerel 36.125 4.629
+Mackerel 15.133 1.703
+Walleye 7.28 4.434
+Trout 10 5.356
+Perch 36.056 4.657
+Mackerel 19.723 4.181
+Red Snapper 19.925 1.265
+Whitesaddle Goatfish 47.265 1.465
+Sea Bass 43.932 1.777
+Sea Bass 20.1 0.1
+Whitesaddle Goatfish 7.071 5.498
+Mackerel 38.079 1.332
+Sea Bass 19.105 2.319
+Halibut 18.439 2.433
+Red Snapper 30.463 5.117
+Whitesaddle Goatfish 14.036 1.499
+Halibut 32.65 0.872
+Perch 24.413 0.96
+Whitesaddle Goatfish 45.1 1.504
+Whitesaddle Goatfish 9.487 0.322
+Mackerel 5.385 0.381
+Perch 36.892 4.139
+Walleye 16.553 1.134
+Walleye 14.318 1.36
+Halibut 33.422 5.392
+Mackerel 13.038 4.789
+Yellowfin Tuna 25.495 0.841
+Red Snapper 38.471 4.225
+Red Snapper 12.53 2.07
+Salmon 31.575 1.38
+Whitesaddle Goatfish 30.414 5.521
+Red Snapper 37.577 2.011
+Mackerel 24.597 0.464
+Walleye 28.636 2.003
+Trout 39.294 1.828
+Yellowfin Tuna 15.811 0.965
+Walleye 21.633 5.3
+Walleye 32.802 5.368
+Whitesaddle Goatfish 9.487 5.034
+Salmon 20.224 1.422
+Red Snapper 6.083 1.736
+Sea Bass 15.033 4.646
+Halibut 12.042 4.629
+Red Snapper 31.385 4.177
+Whitesaddle Goatfish 35.341 1.132
+Trout 39.459 4.865
+Mackerel 37.054 4.658
+Yellowfin Tuna 36.222 1.46
+Sea Bass 12.53 5.784
+Perch 13.601 5.654
+Whitesaddle Goatfish 13.038 2.138
+Walleye 48.26 1.675
+Red Snapper 20.591 2.634
+Perch 23.601 2.507
+Whitesaddle Goatfish 33.242 4.438
+Perch 22.472 4.348
+Halibut 13.601 5.011
+Yellowfin Tuna 25.06 1.071
+Red Snapper 24.083 0.083
+Perch 24.759 2.328
+Halibut 7 1.571
+Trout 31.145 0.74
+Walleye 9.849 5.131
+Perch 17.029 3.2
+Halibut 10.05 6.184
+Trout 35.171 1.83
+Walleye 34 4.222
+Trout 29.069 2.034
+Perch 18.439 4.004
+Yellowfin Tuna 49.163 4.631
+Yellowfin Tuna 35.114 1.92
+Walleye 17.464 5.871
+Trout 15.62 2.266
+Salmon 36.235 1.082
+Red Snapper 24.042 3.437
+Salmon 14 1.571
+Sea Bass 14.866 2.404
+Walleye 30.083 4.443
+Trout 35.777 4.249
+Mackerel 31.401 1.731
+Walleye 10.63 5.431
+Perch 25.06 0.499
+Sea Bass 32.28 4.43
+Whitesaddle Goatfish 4.123 3.387
+Walleye 28.018 2.534
+Halibut 42.579 4.547
+Halibut 43.966 1.271
+Whitesaddle Goatfish 24.021 3.1
+Sea Bass 38.471 5.199
+Sea Bass 23.431 5.588
+Yellowfin Tuna 37.162 1.155
+Salmon 30.017 4.679
+Yellowfin Tuna 29.12 4.434
+Red Snapper 18.439 6.065
+Mackerel 13.153 6.131
+Halibut 18.358 5.225
+Trout 17.088 1.93
+Red Snapper 23 3.142
+Whitesaddle Goatfish 44.181 1.48
+Mackerel 14.213 0.885
+Mackerel 22.561 4.489
+Yellowfin Tuna 10 5.64
+Red Snapper 17.029 0.869
+Whitesaddle Goatfish 13.038 4.636
+Yellowfin Tuna 14.213 0.686
+Mackerel 26.627 5.685
+Perch 29.411 5.023
+Whitesaddle Goatfish 25.632 4.354
+Sea Bass 36.125 4.796
+Red Snapper 26.476 4.522
+Halibut 50 4.712
+Salmon 23.022 1.614
+Whitesaddle Goatfish 40.2 1.471
+Red Snapper 34.928 1.802
+Mackerel 22.023 1.616
+Halibut 12.207 0.96
+Mackerel 17.117 6.166
+Mackerel 16.155 0.381
+Mackerel 15.556 3.927
+Walleye 31.906 5.274
+Trout 7.28 4.991
+Sea Bass 20.616 5.885
+Mackerel 23.345 0.172
+Trout 21.84 2.863
+Walleye 8.944 2.034
+Halibut 10 0.644
+Red Snapper 29.206 5.376
+Mackerel 13.038 3.065
+Sea Bass 22.472 3.506
+Yellowfin Tuna 35.355 4.211
+Red Snapper 38.471 4.556
+Salmon 37.216 4.82
+Yellowfin Tuna 34.713 4.509
+Trout 14.866 3.485
+Trout 11.402 0.661
+Red Snapper 34.928 4.3
+Red Snapper 20.248 0.353
+Trout 39.051 1.803
+Salmon 24 1.571
+Red Snapper 16 6.283
+Trout 19.416 4.505
+Trout 20.616 5.111
+Red Snapper 31.385 5.247
+Trout 24.187 1.446
+Red Snapper 26.401 2.712
+Halibut 22.023 0.045
+Red Snapper 15.524 1.31
+Mackerel 24.187 3.661
+Whitesaddle Goatfish 26.019 1.532
+Mackerel 6.403 5.608
+Sea Bass 31.016 4.745
+Trout 33.287 2.142
+Mackerel 38.079 2.093
+Salmon 22.804 6.017
+Halibut 12.806 2.467
+Perch 43.012 4.736
+Salmon 46.69 4.885
+Red Snapper 33.061 1.631
+Red Snapper 3 4.712
+Walleye 26.926 1.024
+Salmon 42.72 1.856
+Mackerel 25.71 4.477
+Trout 39.395 5.131
+Mackerel 44.385 1.32
+Sea Bass 25.06 4.213
+Mackerel 23.324 4.172
+Salmon 11.705 5.061
+Red Snapper 31.906 2.133
+Perch 3.162 5.961
+Whitesaddle Goatfish 14.866 5.055
+Mackerel 5.099 4.91
+Mackerel 35 4.069
+Red Snapper 31.048 1.831
+Perch 33.242 1.94
+Halibut 21.024 1.523
+Trout 16.125 4.193
+Yellowfin Tuna 7.616 1.166
+Sea Bass 18.385 3.927
+Trout 11.402 5.373
+Perch 30.265 4.58
+Trout 33.422 0.891
+Salmon 21.024 1.128
+Whitesaddle Goatfish 14.765 5.789
+Perch 44.407 4.577
+Salmon 23.77 3.397
+Sea Bass 13.454 2.304
+Perch 21.26 3.994
+Walleye 17.692 0.825
+Halibut 26 1.176
+Sea Bass 34 1.571
+Walleye 49.01 1.591
+Salmon 20 4.712
+Sea Bass 26 0.395
+Mackerel 13.342 1.344
+Walleye 13.454 3.98
+Halibut 27.731 2.018
+Red Snapper 20.591 4.205
+Sea Bass 23.77 5.101
+Sea Bass 16.031 0.062
+Yellowfin Tuna 24.187 1.695
+Whitesaddle Goatfish 22.361 1.751
+Whitesaddle Goatfish 13.928 3.509
+Yellowfin Tuna 41.231 1.326
+Walleye 30.017 2.094
+Yellowfin Tuna 16.279 2.956
+Sea Bass 38.484 4.284
+Walleye 11.314 0.785
+Yellowfin Tuna 43.012 1.264
+Sea Bass 31.241 2.266
+Yellowfin Tuna 47.096 1.635
+Whitesaddle Goatfish 28.16 1.678
+Halibut 26.926 3.688
+Walleye 17.72 3.428
+Red Snapper 20.616 2.253
+Sea Bass 27.295 1.074
+Sea Bass 16.125 3.266
+Salmon 30.529 1.019
+Perch 27.893 1.824
+Salmon 26.173 2.383
+Salmon 24.207 5.615
+Walleye 29.069 4.249
+Salmon 24.413 2.182
+Sea Bass 18.028 0.055
+Walleye 43.681 1.849
+Salmon 3.606 2.159
+Trout 22.136 1.249
+Red Snapper 34.928 1.158
+Halibut 39.115 4.636
+Walleye 15.264 5.732
+Mackerel 7.28 1.849
+Salmon 24.207 0.668
+Yellowfin Tuna 42.107 1.499
+Mackerel 39.623 1.748
+Yellowfin Tuna 22.136 3.463
+Perch 19.723 5.244
+Whitesaddle Goatfish 12.042 3.986
+Red Snapper 7.071 4.854
+Mackerel 16.492 6.038
+Red Snapper 23.77 0.255
+Halibut 24.187 4.837
+Trout 29 4.712
+Salmon 24.083 0.844
+Walleye 18.248 2.976
+Walleye 21.024 3.584
+Sea Bass 28.018 0.963
+Trout 28.284 4.854
+Sea Bass 27.166 4.602
+Red Snapper 36.235 5.201
+Sea Bass 14.56 4.991
+Red Snapper 36 4.712
+Whitesaddle Goatfish 21.633 2.159
+Yellowfin Tuna 15.264 4.161
+Whitesaddle Goatfish 37.121 4.237
+Trout 34.713 4.915
+Halibut 33.242 4.343
+Mackerel 23.087 3.228
+Yellowfin Tuna 41.976 1.787
+Sea Bass 12.042 1.654
+Sea Bass 34.234 4.595
+Trout 22.204 3.277
+Perch 5.657 0.785
+Yellowfin Tuna 18.868 5.725
+Whitesaddle Goatfish 48.374 1.695
+Salmon 14.866 0.833
+Perch 26.42 3.656
+Halibut 49 4.712
+Sea Bass 17.804 2.237
+Mackerel 29.069 5.425
+Walleye 31.064 1.506
+Salmon 19.105 0.748
+Halibut 15.232 2.737
+Salmon 33 1.571
+Red Snapper 48 1.571
+Yellowfin Tuna 33.287 0.999
+Red Snapper 22.361 2.034
+Sea Bass 27.295 4.216
+Trout 31.765 1.079
+Whitesaddle Goatfish 43.417 4.456
+Walleye 34.059 1.512
+Yellowfin Tuna 2 3.142
+Trout 40.012 4.687
+Salmon 17.493 1.03
+Red Snapper 20.616 6.038
+Yellowfin Tuna 33.422 4.033
+Sea Bass 29.275 1.434
+Mackerel 28.284 2.356
+Sea Bass 41.485 1.302
+Perch 29.967 2.02
+Perch 20.616 4.03
+Sea Bass 19.647 1.313
+Walleye 21.954 2.617

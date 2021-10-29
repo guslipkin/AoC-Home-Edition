@@ -1,0 +1,153 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+read in base ellipse csv file
+change blank text cells to NA
+```{r}
+#df <- read.csv("../IndividualCode/SampleEllipse.csv", colClasses = rep("character", 6), header = FALSE)
+df <- read.csv("../IndividualCode/ellipse.csv", colClasses = rep("character", 10), header = FALSE)
+for(r in 1:nrow(df))
+  for (c in 1:ncol(df))
+    if (df[r, c] == "")
+      df[r, c] <- NA
+```
+
+count spaces
+```{r}
+count <- 0
+for (r in 1:nrow(df))
+  for (c in 1:ncol(df))
+    if (!is.na(df[r, c]))
+      count <- count + 1
+count
+```
+
+create fish
+```{r}
+fishName <-
+  c(
+    "Halibut",
+    "Perch",
+    "Red Snapper",
+    "Yellowfin Tuna",
+    "Trout",
+    "Sea Bass",
+    "Walleye",
+    "Salmon",
+    "Mackerel",
+    "Whitesaddle Goatfish"
+  )
+fishLetter <- c("h", "p", "r", "y", "t", "b", "w", "s", "m", "g")
+```
+
+fill pond
+```{r}
+fillPond <- function(df) {
+  for (r in 1:nrow(df)) {
+    for (c in 1:ncol(df)) {
+      if (!is.na(df[r, c]) & runif(1, min = 0, max = 1) > .75) {
+        df[r, c] <- fishLetter[floor(runif(1, min = 1, max = length(fishName) + 1))]
+      } else if (!is.na(df[r, c])) {
+        df[r, c] <- ""
+      }
+    }
+  }
+  return(df)
+}
+```
+
+create x and y vectors for coordinate additions to check radius
+```{r}
+cAdd <- c()
+rAdd <- c()
+radius <- floor(ncol(df)/10)
+
+for(r in -radius:radius) {
+  for(c in -radius:radius) {
+    if((0-r)^2 + (0-c)^2 <= radius^2) {
+      rAdd <- append(rAdd, r)
+      cAdd <- append(cAdd, c)
+    }
+  }
+}
+```
+
+
+check if part 1 passes (also solution for part 1)
+```{r}
+masterDF <- df
+matchTotal <- 0
+while (matchTotal != 1) {
+  cFill <- c()
+  rFill <- c()
+  df <- fillPond(masterDF)
+  for (r in 1:nrow(df)) {
+    for (c in 1:ncol(df)) {
+      if (!is.na(df[r, c]) & df[r, c] != "") {
+        cFill <- append(cFill, c)
+        rFill <- append(rFill, r)
+      }
+    }
+  }
+  matchTotal <- 0
+  for (j in 1:length(cFill)) {
+    fishCount <- c()
+    for (i in 1:length(cAdd)) {
+      tempR <- rFill[j] + rAdd[i]
+      tempC <- cFill[j] + cAdd[i]
+      if (tempR >= 1 & tempR <= nrow(df) & tempC >= 1 & tempC <= ncol(df))
+        if (!is.na(df[tempR, tempC]) & df[tempR, tempC] != "")
+          fishCount <- append(fishCount, df[tempR, tempC])
+    }
+    if (sum(fishCount == "y") >= 3 & sum(fishCount == "s") >= 3 & sum(fishCount == "m") >= 3 &
+        sum(fishCount == "w") == 0 & sum(fishCount == "h") == 0) {
+      matchTotal <- matchTotal + 1
+      print(paste("r:", rFill[j], "c:", cFill[j]))
+    }
+    if (matchTotal > 1)
+      break
+  }
+  if(nrow(df[rowSums(!is.na(df) & df != "") == 0,]) != 0 | 
+     !(TRUE %in% colSums(!is.na(df) & df != "")))
+    matchTotal <- 0
+}
+masterDF <- df
+df <- masterDF
+```
+
+Create list of fish as dataframe
+```{r}
+centerC <- ceiling(ncol(df) / 2)
+centerR <- ceiling(nrow(df) / 2)
+
+listDF <-
+  data.frame(
+    "Fish" = c("fish"),
+    "Magnitude" = c(0),
+    "Direction" = c(0.00)
+  )
+for (i in 1:length(cFill)) {
+  name <- fishName[match(df[rFill[i], cFill[i]], fishLetter)]
+  magnitude <- round(sqrt((centerC - cFill[i]) ^ 2 + (centerR - rFill[i]) ^ 2), digits = 3)
+  direction <- round(atan2(centerR - rFill[i], centerC - cFill[i]) + pi, digits = 3)
+  direction <- round(direction, digits = 3)
+  listDF <- rbind(listDF,
+                  data.frame(
+                    "Fish" = name,
+                    "Magnitude" = magnitude,
+                    "Direction" = direction
+                  ))
+}
+
+listDF <- listDF[-1, ]
+```
+
+create fishVector and randomize it
+```{r}
+fishVector <- sample(as.vector(paste(listDF$Fish, listDF$Magnitude, listDF$Direction)))
+write(fishVector, "../IndividualCode/input.txt")
+write.csv(df, "../IndividualCode/input.csv")
+```
+

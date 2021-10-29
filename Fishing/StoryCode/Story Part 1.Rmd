@@ -1,0 +1,127 @@
+---
+title: "Story Part 1"
+output: html_notebook
+---
+
+```{r, echo=FALSE, include=FALSE}
+library(tidyverse)
+library(plotrix)
+
+input <- readLines("../IndividualCode/sampleInput.txt")
+
+df <- data.frame(
+  "Fish" = c(gsub("[^a-zA-Z]", "", input[])),
+  "Magnitude" = as.double(c(sapply(strsplit(trimws(gsub("[^0-9\\.]", " ", input[])), " "), "[", 1))),
+  "Direction" = as.double(c(sapply(strsplit(trimws(gsub("[^0-9\\.]", " ", input[])), " "), "[[", 2)))
+)
+
+df <- df %>% mutate(column = round(df$Magnitude * cos(df$Direction)),
+                    row = round(df$Magnitude * sin(df$Direction)))
+df$column <- df$column + max(df$column) + 1
+df$row <- df$row + max(df$row) + 1
+df
+
+fishName <-
+  c(
+    "Halibut",
+    "Perch",
+    "Red Snapper",
+    "YellowfinTuna",
+    "Trout",
+    "SeaBass",
+    "Walleye",
+    "Salmon",
+    "Mackerel",
+    "WhitesaddleGoatfish"
+  )
+fishLetter <- c("h", "p", "r", "y", "t", "b", "w", "s", "m", "g")
+```
+
+
+It's a beautiful day. The sunrise is turning the sky fiery, birds are chirping, butterflies are fluttering, and fish are nibbling. Or rather, they would be if you weren't using a net to fish. 
+
+You've decided that you want to make sushi for dinner tonight as a special treat and resolve to only use the freshest ingredients, including some fish that you've caught yourself. An over-zealous park ranger has made a map of your favorite pond that contains the location of each fish in the pond in **`polar form`**. Said ranger knows that computers prefer radians so he used those for the angle. Your puzzle input is the `list of every fish and its location in the pond`.
+
+The list given to you looks like this, but longer:
+
+```
+Mackerel 2.236 4.249
+Red Snapper 3.162 5.961
+Sea Bass 0 3.142
+Salmon 1 6.283
+Sea Bass 3.606 5.695
+```
+
+For example, the Mackerel can be found at location (2.236, 4.249) which is interpreted as 2.239 units of distance away from the center at angle 4.249 radians. The Mackerel is marked as the red diamond on the pond map below.
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE}
+#base plot
+radial.plot(
+  df$Magnitude,
+  radial.pos = df$Direction,
+  label.prop = 1,
+  line.col = df$Fish,
+  show.radial.grid = FALSE,
+  rp.type = "s",
+  point.symbols = 19,
+  show.centroid = FALSE,
+  radial.labels = NA,
+  boxed.radial = FALSE,
+  point.col = df$Fish,
+  labels = NULL,
+  grid.col = "light blue",
+  cex = 1
+)
+
+# #circle for net
+# df <-
+#   rbind(
+#     df,
+#     data.frame(
+#       "Fish" = "net",
+#       "Magnitude" = 3.5,
+#       "Direction" = 2 * pi,
+#       "column" = round(4.243 * cos(2 * pi)),
+#       "row" = round(4.243 * sin(2 * pi))
+#     )
+#   )
+# radial.plot(
+#   df$Magnitude,
+#   radial.pos = df$Direction,
+#   label.prop = 1,
+#   line.col = df$Fish,
+#   show.radial.grid = FALSE,
+#   rp.type = "s",
+#   point.symbols = c(19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 1),
+#   show.centroid = FALSE,
+#   radial.labels = NA,
+#   boxed.radial = FALSE,
+#   point.col = df$Fish,
+#   labels = NULL,
+#   grid.col = "light blue",
+#   cex = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 15),
+#   add = TRUE
+# )
+
+#diamond
+df <- df[-nrow(df),]
+radial.plot(
+  df$Magnitude,
+  radial.pos = df$Direction,
+  label.prop = 1,
+  line.col = df$Fish,
+  show.radial.grid = FALSE,
+  rp.type = "s",
+  point.symbols = c(18, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19),
+  show.centroid = FALSE,
+  radial.labels = NA,
+  boxed.radial = FALSE,
+  point.col = df$Fish,
+  labels = NULL,
+  grid.col = "light blue",
+  cex = 2,
+  add = TRUE
+)
+```
+
+Your goal is to `find the polar coordinates` for the point in the pond where you can catch `at least three each Yellowfin Tuna, Salmon, and Mackerel, absolutely no Halibut or Walleye, and any number of other fish` with your net that has a `radius of five units`. Once you've found the proper magnitude and direction to the **`nearest thousandths`**, multiply them together for your passkey.

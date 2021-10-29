@@ -1,0 +1,122 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r, warning=FALSE}
+library(tidyverse)
+```
+
+create dataframe from the list and create row and column values
+```{r}
+input <- readLines("../IndividualCode/input.txt")
+
+df <- data.frame(
+  "Fish" = c(gsub("[^a-zA-Z]", "", input[])),
+  "Magnitude" = as.double(c(sapply(strsplit(trimws(gsub("[^0-9\\.]", " ", input[])), " "), "[", 1))),
+  "Direction" = as.double(c(sapply(strsplit(trimws(gsub("[^0-9\\.]", " ", input[])), " "), "[[", 2)))
+)
+
+df <- df %>% mutate(column = round(df$Magnitude * cos(df$Direction)),
+                    row = round(df$Magnitude * sin(df$Direction)))
+df$column <- df$column + max(df$column) + 1
+df$row <- df$row + max(df$row) + 1
+df
+```
+
+create the pond
+```{r}
+fishName <-
+  c(
+    "Halibut",
+    "Perch",
+    "Red Snapper",
+    "YellowfinTuna",
+    "Trout",
+    "SeaBass",
+    "Walleye",
+    "Salmon",
+    "Mackerel",
+    "WhitesaddleGoatfish"
+  )
+fishLetter <- c("h", "p", "r", "y", "t", "b", "w", "s", "m", "g")
+pond <- data.frame(matrix(NA, nrow=(max(df$row) - min(df$row) + 1), ncol=(max(df$column) - min(df$column) + 1)))
+```
+
+
+```{r}
+for(r in 1:nrow(pond))
+  for(c in 1:ncol(pond))
+    pond[r,c] <- NA
+
+for(i in 1:nrow(df))
+  pond[df$row[i],df$column[i]] <- fishLetter[match(df$Fish[i], fishName)]
+df <- pond
+```
+
+
+```{r}
+cAdd <- c()
+rAdd <- c()
+radius <- 5
+
+for(r in -radius:radius) {
+  for(c in -radius:radius) {
+    if((0-r)^2 + (0-c)^2 <= radius^2) {
+      cAdd <- append(cAdd, c)
+      rAdd <- append(rAdd, r)
+    }
+  }
+}
+```
+
+
+create vectors of filled coordinates
+```{r}
+breakFlag <- FALSE
+cFill <- c()
+rFill <- c()
+for (r in 1:nrow(df)) {
+  for (c in 1:ncol(df)) {
+    if (!is.na(df[r, c]) & df[r, c] != "") {
+      cFill <- append(cFill, c)
+      rFill <- append(rFill, r)
+    }
+  }
+}
+```
+
+check for coordinates that meet criteria
+```{r}
+for (j in 1:length(cFill)) {
+  fishCount <- c()
+  for (i in 1:length(cAdd)) {
+    tempR <- rFill[j] + rAdd[i]
+    tempC <- cFill[j] + cAdd[i]
+    if (tempR >= 1 & tempR <= nrow(df) & tempC >= 1 & tempC <= ncol(df))
+      if (!is.na(df[tempR, tempC]) & df[tempR, tempC] != "")
+        fishCount <- append(fishCount, df[tempR, tempC])
+  }
+  if (sum(fishCount == "y") >= 3 & sum(fishCount == "s") >= 3 & sum(fishCount == "m") >= 3 &
+      sum(fishCount == "w") == 0 & sum(fishCount == "h") == 0) {
+    print(paste("r:", rFill[j], "c:", cFill[j]))
+    breakFlag <- TRUE
+    break
+  }
+  if (breakFlag)
+    break
+}
+y <- rFill[j]
+x <- cFill[j]
+```
+
+convert to polar and get password
+```{r}
+centerX <- ceiling(ncol(df) / 2)
+centerY <- ceiling(nrow(df) / 2)
+distance <- round(sqrt((centerX - x)^2 + (centerY - y)^2), digits = 3)
+angle <- round(atan2(y, x), digits = 3)
+password1 <- distance * angle
+password1
+```
+

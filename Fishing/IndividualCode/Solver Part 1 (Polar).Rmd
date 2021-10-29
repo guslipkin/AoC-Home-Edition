@@ -1,0 +1,50 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r, warning=FALSE}
+library(tidyverse)
+```
+
+create dataframe from the list and create row and column values
+```{r}
+input <- readLines("../IndividualCode/input.txt")
+
+df <- data.frame(
+  "Fish" = c(gsub("[^a-zA-Z]", "", input[])),
+  "Magnitude" = as.double(c(sapply(strsplit(trimws(gsub("[^0-9\\.]", " ", input[])), " "), "[", 1))),
+  "Direction" = as.double(c(sapply(strsplit(trimws(gsub("[^0-9\\.]", " ", input[])), " "), "[[", 2)))
+)
+
+df <- df %>% mutate(column = round(df$Magnitude * cos(df$Direction)),
+                    row = round(df$Magnitude * sin(df$Direction)))
+df$column <- df$column + max(df$column) + 1
+df$row <- df$row + max(df$row) + 1
+df
+```
+
+```{r}
+#magnitude
+for (i in seq(24.8, 25, by = .001)) {
+  fishList <- c()
+  #direction
+  for (j in seq(0, 2 * pi, by = .001)) {
+    for (x in 1:length(df)) {
+      if (5 >= sqrt(i ^ 2 + df$Magnitude[x] ^ 2 - (2 * i * df$Magnitude[x] * cos(df$Direction[x] - j)))) {
+        #if (!is.na(match(i, df$Magnitude)) & !is.na(match(j, df$Direction)) & match(i, df$Magnitude) == match(j, df$Direction)) {
+          fishList <- append(fishList, df$Fish[x])
+        #}
+      }
+    }
+  }
+  if (sum(fishList == "YellowfinTuna") >= 3 &
+      sum(fishList == "Salmon") >= 3 &
+      sum(fishList == "Mackerel") >= 3 &
+      sum(fishList == "Walleye") == 3 &
+      sum(fishList == "Halibut") == 0) {
+    print(paste("Mag:", i, "Dir:", j))
+  }
+}
+```
+
